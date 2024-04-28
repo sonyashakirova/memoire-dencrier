@@ -1,3 +1,3 @@
 export const CatalogSection = () => {
-  return <div>CatalogSection</div>;
+  return <div className='catalog'>CatalogSection</div>;
 };

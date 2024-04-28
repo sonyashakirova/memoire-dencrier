@@ -1,3 +1,3 @@
 export const FeaturedContentSection = () => {
-  return <div>FeaturedContentSection</div>;
+  return <div className='featured-content'>FeaturedContentSection</div>;
 };

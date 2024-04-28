@@ -1,0 +1,39 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: clip;
+  pointer-events: none;
+  padding: var(--spacing-8) 0;
+}
+
+.intro__content {
+  align-self: center;
+  text-align: center;
+}
+
+.intro__title {
+  font-family: var(--heading-font-family);
+  font-size: var(--h1-font-size);
+}
+
+.intro__title span {
+  display: inline-block;
+}
+
+.intro__title > span {
+  overflow-y: hidden;
+  height: var(--h1-font-size);
+  padding-top: 0.4rem;
+}
+
+@media screen and (max-width: 2599px) {
+  .intro__title > span {
+    display: block;
+  }
+}
+
+.intro__description {
+  margin-top: var(--spacing-5);
+}
