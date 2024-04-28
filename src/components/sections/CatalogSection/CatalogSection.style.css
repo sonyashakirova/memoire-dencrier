@@ -1,0 +1,28 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh * 1.1);
+  padding: var(--spacing-7) 0;
+}
+
+.catalog__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--wrapper-width);
+  max-width: calc(100vw - var(--grid-margin) * 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .catalog__wrapper {
+    flex-direction: column;
+  }
+}
+
+.catalog__categories,
+.catalog__books {
+  list-style: none;
+}

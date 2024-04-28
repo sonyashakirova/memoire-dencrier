@@ -1,0 +1,56 @@
+.new-arrivals {
+  padding: var(--spacing-8) 0;
+  padding-top: 70vh;
+  text-align: center;
+}
+
+.new-arrivals__wrapper {
+  width: var(--wrapper-width);
+  max-width: calc(100vw - var(--grid-margin) * 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new-arrivals__title {
+  position: absolute;
+  width: 100%;
+  height: calc(50% + 150vh);
+  bottom: calc(50% - 0.6em);
+  pointer-events: none;
+  z-index: -1;
+  font-size: var(--h1-font-size);
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
+}
+
+.new-arrivals__title span {
+  top: 445px;
+  position: sticky;
+  opacity: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.new-arrivals__books {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: var(--spacing-3);
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1199px) and (orientation: portrait),
+  screen and (max-width: 749px) {
+  .new-arrivals__books {
+    flex-direction: column;
+  }
+}
+
+.new-arrivals__link {
+  display: block;
+  margin-top: var(--spacing-7);
+  text-align: center;
+  font-size: calc(18 / var(--base-px) * 1rem);
+  font-family: var(--heading-font-family);
+}

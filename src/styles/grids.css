@@ -9,6 +9,9 @@
           (var(--grid-gap) * (var(--grid-cols) - 1))
       ) / var(--grid-cols)
   );
+  --wrapper-width: calc(
+    (var(--grid-gap) + var(--grid-col-width)) * 18 - var(--grid-gap)
+  );
 }
 
 @media screen and (max-width: 1199px) {
@@ -17,6 +20,9 @@
     --grid-gap: 1rem;
     --grid-margin: 2rem;
     --header-top-height: 8rem;
+    --wrapper-width: calc(
+      (var(--grid-gap) + var(--grid-col-width)) * 12 - var(--grid-gap)
+    );
   }
 }
 
@@ -26,5 +32,8 @@
     --grid-gap: 0.55rem;
     --grid-margin: 1.65rem;
     --header-top-height: 6rem;
+    --wrapper-width: calc(
+      (var(--grid-gap) + var(--grid-col-width)) * 8 - var(--grid-gap)
+    );
   }
 }

@@ -22,7 +22,9 @@
 }
 
 .sun {
-  --sun-diameter: calc(var(--grid-col-width) * 9 + var(--grid-gap) * 8);
+  --sun-diameter: calc(
+    (var(--grid-col-width) + var(--grid-gap)) * 9 - var(--grid-gap)
+  );
   display: inline-block;
   position: absolute;
   bottom: calc(100vh - var(--sun-diameter) / 4);
@@ -37,7 +39,9 @@
 
 @media screen and (max-width: 1199px) {
   .sun {
-    --sun-diameter: calc(var(--grid-col-width) * 8 + var(--grid-gap) * 7);
+    --sun-diameter: calc(
+      (var(--grid-col-width) + var(--grid-gap)) * 8 - var(--grid-gap)
+    );
     top: calc(100vh * 0.395);
     right: calc(var(--grid-gap) * -3 + var(--grid-col-width) * -1);
   }
@@ -46,7 +50,9 @@
 @media screen and (max-width: 1199px) and (orientation: portrait),
   screen and (max-width: 749px) {
   .sun {
-    --sun-diameter: calc(var(--grid-col-width) * 12 + var(--grid-gap) * 11);
+    --sun-diameter: calc(
+      (var(--grid-col-width) + var(--grid-gap)) * 12 - var(--grid-gap)
+    );
     top: calc(100vh * 0.425);
     right: calc(var(--grid-gap) * -5 + var(--grid-col-width) * -3);
   }
