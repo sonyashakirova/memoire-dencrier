@@ -1,0 +1,29 @@
+:root {
+  --base-px: 13.5;
+  --spacing-1: calc(8 / var(--base-px) * 1rem);
+  --spacing-2: calc(16 / var(--base-px) * 1rem);
+  --spacing-3: calc(24 / var(--base-px) * 1rem);
+  --spacing-4: calc(32 / var(--base-px) * 1rem);
+  --spacing-5: calc(40 / var(--base-px) * 1rem);
+  --spacing-6: calc(64 / var(--base-px) * 1rem);
+  --spacing-7: calc(128 / var(--base-px) * 1rem);
+  --spacing-8: calc(152 / var(--base-px) * 1rem);
+  --spacing-9: calc(256 / var(--base-px) * 1rem);
+}
+
+@media screen and (max-width: 1199px) {
+  :root {
+    --base-px: 16;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --base-px: 14.5;
+    --spacing-5: calc(32 / var(--base-px) * 1rem);
+    --spacing-6: calc(40 / var(--base-px) * 1rem);
+    --spacing-7: calc(64 / var(--base-px) * 1rem);
+    --spacing-8: calc(72 / var(--base-px) * 1rem);
+    --spacing-9: calc(128 / var(--base-px) * 1rem);
+  }
+}

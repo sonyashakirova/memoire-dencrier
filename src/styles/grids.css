@@ -1,0 +1,30 @@
+:root {
+  --grid-cols: 20;
+  --grid-gap: 1.2rem;
+  --grid-margin: 3rem;
+  --header-top-height: 10rem;
+  --grid-col-width: calc(
+    (
+        100vw - (var(--grid-margin) * 2) -
+          (var(--grid-gap) * (var(--grid-cols) - 1))
+      ) / var(--grid-cols)
+  );
+}
+
+@media screen and (max-width: 1199px) {
+  :root {
+    --grid-cols: 12;
+    --grid-gap: 1rem;
+    --grid-margin: 2rem;
+    --header-top-height: 8rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --grid-cols: 8;
+    --grid-gap: 0.55rem;
+    --grid-margin: 1.65rem;
+    --header-top-height: 6rem;
+  }
+}

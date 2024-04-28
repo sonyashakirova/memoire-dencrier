@@ -1,0 +1,50 @@
+@font-face {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('src/assets/fonts/Archivo-Regular.woff2') format('woff2'),
+    url('src/assets/fonts/Archivo-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gambarino';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('src/assets/fonts/Gambarino-Regular.woff2') format('woff2'),
+    url('src/assets/fonts/Gambarino-Regular.woff') format('woff');
+}
+
+:root {
+  --base-font-family: Archivo, Arial, sans-serif;
+  --heading-font-family: Gambarino, 'Times New Roman', serif;
+  --base-px: 13.5;
+  --h1-font-size: calc(104 / var(--base-px) * 1rem);
+  --h2-font-size: calc(56 / var(--base-px) * 1rem);
+  --h3-font-size: calc(48 / var(--base-px) * 1rem);
+  --h4-font-size: calc(32 / var(--base-px) * 1rem);
+  --p-font-size: calc(22 / var(--base-px) * 1rem);
+}
+
+@media screen and (max-width: 1199px) {
+  :root {
+    --base-px: 16;
+    --h1-font-size: calc(88 / var(--base-px) * 1rem);
+    --h2-font-size: calc(52 / var(--base-px) * 1rem);
+    --h3-font-size: calc(46 / var(--base-px) * 1rem);
+    --h4-font-size: calc(30 / var(--base-px) * 1rem);
+    --p-font-size: calc(20 / var(--base-px) * 1rem);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --base-px: 14.5;
+    --h1-font-size: calc(48 / var(--base-px) * 1rem);
+    --h2-font-size: calc(48 / var(--base-px) * 1rem);
+    --h3-font-size: calc(32 / var(--base-px) * 1rem);
+    --h4-font-size: calc(28 / var(--base-px) * 1rem);
+    --p-font-size: calc(16 / var(--base-px) * 1rem);
+  }
+}
