@@ -1,6 +1,7 @@
 :root {
   --font-color: #1d1d1b;
   --background-color: #f0ebe8;
+  --font-color-active: #ea5a0b;
   --sun-color: #f0eb65;
   --sunset-color: linear-gradient(
     to bottom,

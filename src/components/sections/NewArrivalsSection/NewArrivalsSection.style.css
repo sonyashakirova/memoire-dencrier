@@ -1,34 +1,54 @@
 .new-arrivals {
   padding: var(--spacing-8) 0;
-  padding-top: 70vh;
+  padding-top: 100vh;
   text-align: center;
 }
 
+@media screen and (max-width: 1199px) and (orientation: portrait),
+  screen and (max-width: 749px) {
+  .new-arrivals {
+    padding-top: 70vh;
+  }
+}
+
 .new-arrivals__wrapper {
-  width: var(--wrapper-width);
+  width: var(--wrapper-width-sm);
   max-width: calc(100vw - var(--grid-margin) * 2);
   margin-left: auto;
   margin-right: auto;
 }
 
-.new-arrivals__title {
+.new-arrivals__title-container {
   position: absolute;
   width: 100%;
   height: calc(50% + 150vh);
   bottom: calc(50% - 0.6em);
   pointer-events: none;
   z-index: -1;
+}
+
+@media screen and (max-width: 1199px) and (orientation: portrait),
+  screen and (max-width: 749px) {
+  .new-arrivals__title-container {
+    height: calc(100% + 150vh);
+    bottom: calc(var(--home_latest_books_mobile_title_bottom, 50%) - 0.6em);
+  }
+}
+
+.new-arrivals__title {
+  top: 334px;
+  position: sticky;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
   font-size: var(--h1-font-size);
   font-family: var(--heading-font-family);
   text-transform: uppercase;
 }
 
 .new-arrivals__title span {
-  top: 445px;
-  position: sticky;
-  opacity: 1;
-  width: 100%;
-  overflow: hidden;
+  display: block;
+  padding: 0.08em 0 0.1em;
 }
 
 .new-arrivals__books {
@@ -38,6 +58,8 @@
   list-style: none;
   gap: var(--spacing-3);
   justify-content: space-between;
+  width: 100%;
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 1199px) and (orientation: portrait),
@@ -47,10 +69,25 @@
   }
 }
 
-.new-arrivals__link {
-  display: block;
-  margin-top: var(--spacing-7);
+.new-arrivals__link-container {
+  margin-top: var(--spacing-4);
   text-align: center;
+}
+
+.new-arrivals__link {
+  display: inline-block;
   font-size: calc(18 / var(--base-px) * 1rem);
   font-family: var(--heading-font-family);
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 0.85em;
+  height: 100%;
+  transform-origin: right center;
+  transform: scaleX(0);
+  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }

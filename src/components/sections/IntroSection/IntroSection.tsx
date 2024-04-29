@@ -1,13 +1,18 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { SunBackground } from './SunBackground';
 import './IntroSection.style.css';
 
 export const IntroSection = () => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, -400]);
+  const yh1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+
   return (
-    <section className='intro'>
+    <section className='intro-section'>
       <SunBackground />
-      <div className='intro__content'>
-        <h1 className='intro__title'>
+      <motion.div className='intro-section__content' style={{ y, scale }}>
+        <motion.h1 className='intro-section__title' style={{ y: yh1 }}>
           <span>
             <motion.span
               initial={{ y: 300 }}
@@ -26,16 +31,16 @@ export const IntroSection = () => {
               L'HORIZON
             </motion.span>
           </span>
-        </h1>
+        </motion.h1>
         <motion.p
-          className='intro__description'
+          className='intro-section__description'
           initial={{ y: 16, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 2.9, duration: 1.2 }}
         >
           Maison d'édition fondée en 2003
         </motion.p>
-      </div>
+      </motion.div>
     </section>
   );
 };

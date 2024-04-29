@@ -16,14 +16,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: auto;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 html,
 body {
   min-height: 100%;
@@ -32,8 +24,29 @@ body {
 
 body {
   font-family: var(--base-font-family);
-  font-size: var(--p-font-size);
+  font-size: var(--base-font-size);
   line-height: 1;
   color: var(--font-color);
   background-color: var(--background-color);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

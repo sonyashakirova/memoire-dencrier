@@ -1,3 +1,10 @@
+import './AboutSection.style.css';
+
 export const AboutSection = () => {
-  return <div className='about'>AboutSection</div>;
+  return (
+    <section className='about'>
+      <div className='about__bg'></div>
+      <div className='about__text'></div>
+    </section>
+  );
 };

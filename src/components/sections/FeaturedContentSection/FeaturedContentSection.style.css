@@ -1,0 +1,10 @@
+.featured-content {
+  overflow: hidden;
+}
+
+.featured-content__slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: var(--ff-slider-slides-height, auto);
+}

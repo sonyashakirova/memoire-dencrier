@@ -9,6 +9,7 @@
           (var(--grid-gap) * (var(--grid-cols) - 1))
       ) / var(--grid-cols)
   );
+  --wrapper-width-sm: calc((1rem + (100vw - 15rem) / 12) * 12 - 1rem);
   --wrapper-width: calc(
     (var(--grid-gap) + var(--grid-col-width)) * 18 - var(--grid-gap)
   );
