@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { easeInOut, motion, useScroll, useTransform } from 'framer-motion';
 import { BookLink } from '../../atoms';
 import './NewArrivalsSection.style.css';
 
@@ -10,7 +10,7 @@ export const NewArrivalsSection = () => {
   const { scrollYProgress: scroll2 } = useScroll({ target: ref2 });
   const opacity = useTransform(scrollYProgress, [0.2, 0.7], [0, 1]);
   const y = useTransform(scrollYProgress, [0.1, 0.6], [100, 0]);
-  const booksY = useTransform(scroll2, [0, 1], [-200, 0]);
+  const booksY = useTransform(scroll2, [0, 1], [-200, 0], { ease: easeInOut });
 
   return (
     <section className='new-arrivals'>

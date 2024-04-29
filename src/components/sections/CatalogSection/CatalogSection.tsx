@@ -28,26 +28,31 @@ export const CatalogSection = () => {
           <div className='catalog-section__categories'>
             <h4 className='catalog-section__title'>Collections</h4>
             <ul className='catalog-section__list'>
-              {categories.map((category, index) => {
-                return (
-                  <li key={index}>
-                    <a
-                      className={`catalog-section__link ${
-                        active === index ? 'active' : ''
-                      }`}
-                    >
-                      {category.name}
-                    </a>
-                  </li>
-                );
-              })}
+              {categories.map((category, index) => (
+                <li key={index}>
+                  <a
+                    className={`catalog-section__link ${
+                      active === index ? 'active' : ''
+                    }`}
+                  >
+                    {category.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <ul className='catalog-section__books'>
-              <li>
-                <BookLink />
-              </li>
+              {categories.map((_, index) => (
+                <li
+                  key={index}
+                  className={`catalog-section__book ${
+                    active === index ? 'active' : ''
+                  }`}
+                >
+                  <BookLink />
+                </li>
+              ))}
             </ul>
           </div>
         </div>

@@ -82,6 +82,16 @@
   }
 }
 
-.active {
+.catalog-section__link.active {
   color: var(--font-color-active);
+}
+
+.catalog-section__book {
+  transform: translateX(800px);
+  transition: transform 0.8s ease;
+  position: absolute;
+}
+
+.catalog-section__book.active {
+  transform: translateX(0);
 }

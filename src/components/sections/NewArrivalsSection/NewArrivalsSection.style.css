@@ -4,13 +4,6 @@
   text-align: center;
 }
 
-@media screen and (max-width: 1199px) and (orientation: portrait),
-  screen and (max-width: 749px) {
-  .new-arrivals {
-    padding-top: 70vh;
-  }
-}
-
 .new-arrivals__wrapper {
   width: var(--wrapper-width-sm);
   max-width: calc(100vw - var(--grid-margin) * 2);
