@@ -8,6 +8,7 @@ export const FeaturedContentSection = () => {
   const [current, setCurrent] = useState(0);
   const [next, setNext] = useState(0);
   const [direction, setDirection] = useState('left');
+  // const autoplayRef = useRef<any>(null);
 
   const handleNext = () => {
     setDirection('left');
@@ -38,13 +39,15 @@ export const FeaturedContentSection = () => {
     setNext(index);
   };
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      handleNext();
-    }, 5000);
+  // useEffect(() => {
+  //   autoplayRef.current = setInterval(() => {
+  //     handleNext();
+  //   }, 5000);
 
-    return () => clearTimeout(timeout);
-  }, [next]);
+  //   return () => {
+  //     clearInterval(autoplayRef.current);
+  //   };
+  // }, []);
 
   useEffect(() => {
     setCurrent(next);

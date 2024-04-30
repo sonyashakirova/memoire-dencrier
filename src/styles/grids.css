@@ -1,40 +1,68 @@
 :root {
+  --header-top-height: 10rem;
+  --page-margin: 2rem;
   --grid-cols: 20;
   --grid-gap: 1.2rem;
-  --grid-margin: 3rem;
-  --header-top-height: 10rem;
-  --grid-col-width: calc(
-    (
-        100vw - (var(--grid-margin) * 2) -
-          (var(--grid-gap) * (var(--grid-cols) - 1))
-      ) / var(--grid-cols)
-  );
-  --wrapper-width-sm: calc((1rem + (100vw - 15rem) / 12) * 12 - 1rem);
-  --wrapper-width: calc(
-    (var(--grid-gap) + var(--grid-col-width)) * 18 - var(--grid-gap)
+  --wrapper-col-span-xs: 14;
+  --wrapper-col-span-sm: 16;
+  --wrapper-col-span: 18;
+  --col-width: calc(
+    (100vw - var(--page-margin) * 2 - var(--grid-gap) * (var(--grid-cols) - 1)) /
+      var(--grid-cols)
   );
 }
 
 @media screen and (max-width: 1199px) {
   :root {
+    --header-top-height: 8rem;
+    --page-margin: 3rem;
     --grid-cols: 12;
     --grid-gap: 1rem;
-    --grid-margin: 2rem;
-    --header-top-height: 8rem;
-    --wrapper-width: calc(
-      (var(--grid-gap) + var(--grid-col-width)) * 12 - var(--grid-gap)
-    );
+    --wrapper-col-span-xs: 10;
+    --wrapper-col-span-sm: 12;
+    --wrapper-col-span: 12;
   }
 }
 
 @media screen and (max-width: 749px) {
   :root {
+    --header-top-height: 6rem;
+    --page-margin: 2rem;
     --grid-cols: 8;
     --grid-gap: 0.55rem;
-    --grid-margin: 1.65rem;
-    --header-top-height: 6rem;
-    --wrapper-width: calc(
-      (var(--grid-gap) + var(--grid-col-width)) * 8 - var(--grid-gap)
-    );
+    --wrapper-col-span-xs: 8;
+    --wrapper-col-span-sm: 8;
+    --wrapper-col-span: 8;
   }
+}
+
+.page-grid-xs,
+.page-grid-sm,
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  gap: var(--grid-gap);
+  margin: 0 var(--page-margin);
+}
+
+.page-grid-xs {
+  --span: var(--wrapper-col-span-xs);
+}
+.page-grid-sm {
+  --span: var(--wrapper-col-span-sm);
+}
+.page-grid {
+  --span: var(--wrapper-col-span);
+}
+
+.page-grid-xs > *:first-child,
+.page-grid-sm > *:first-child,
+.page-grid > *:first-child {
+  grid-column-start: calc((var(--grid-cols) - var(--span)) / 2 + 1);
+}
+
+.page-grid-xs > *:last-child,
+.page-grid-sm > *:last-child,
+.page-grid > *:last-child {
+  grid-column-end: calc((var(--grid-cols) - var(--span)) / -2 - 1);
 }

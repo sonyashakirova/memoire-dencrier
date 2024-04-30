@@ -1,9 +1,15 @@
 import './BookLink.style.css';
 
-export const BookLink = () => {
+interface Props {
+  img?: string;
+}
+
+export const BookLink = ({ img }: Props) => {
   return (
     <div className='book-link'>
-      <img src='#' alt='#' />
+      <div className='book-link__image-container'>
+        <img src={`src/assets/images/books/${img}`} alt='#' />
+      </div>
     </div>
   );
 };

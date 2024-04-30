@@ -20,17 +20,40 @@
   --base-font-family: Archivo, Arial, sans-serif;
   --heading-font-family: Gambarino, 'Times New Roman', serif;
   --h1-font-size: 6rem;
-  --h2-font-size: 3.2rem;
+  --h2-font-size: 4rem;
   --h3-font-size: 4rem;
   --h4-font-size: 3.2rem;
   --base-font-size: 1.4rem;
-  --sm-font-size: 1.2rem;
+  --sm-font-size: 1rem;
+}
+
+@media screen and (max-width: 1199px) {
+  :root {
+    --h1-font-size: 6rem;
+    --h2-font-size: 3.4rem;
+    --h3-font-size: 4rem;
+    --h4-font-size: 3.2rem;
+    --base-font-size: 1.4rem;
+    --sm-font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  :root {
+    --h1-font-size: 6rem;
+    --h2-font-size: 1.9rem;
+    --h3-font-size: 4rem;
+    --h4-font-size: 3.2rem;
+    --base-font-size: 1.4rem;
+    --sm-font-size: 1.1rem;
+  }
 }
 
 html {
-  font-size: 8px;
+  font-size: 16px;
 }
 
+/* 
 @media screen and (min-width: 400px) {
   html {
     font-size: 10px;
@@ -59,4 +82,4 @@ html {
   html {
     font-size: 30px;
   }
-}
+} */

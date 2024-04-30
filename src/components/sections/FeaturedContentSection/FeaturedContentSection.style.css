@@ -1,5 +1,6 @@
 .featured-content {
   overflow: hidden;
+  padding: var(--spacing_7) 0;
 }
 
 .featured-content__slider {
@@ -38,6 +39,7 @@
 .featured-content__thumbnails {
   display: flex;
   margin-top: var(--spacing-4);
+  margin-bottom: 120px;
   gap: 30px;
   justify-content: center;
   align-items: center;

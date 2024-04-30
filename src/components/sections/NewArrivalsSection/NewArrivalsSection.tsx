@@ -3,6 +3,12 @@ import { easeInOut, motion, useScroll, useTransform } from 'framer-motion';
 import { BookLink } from '../../atoms';
 import './NewArrivalsSection.style.css';
 
+const books = [
+  { img: 'book-01.jpg' },
+  { img: 'book-01.jpg' },
+  { img: 'book-01.jpg' },
+];
+
 export const NewArrivalsSection = () => {
   const ref = useRef(null);
   const ref2 = useRef(null);
@@ -26,15 +32,11 @@ export const NewArrivalsSection = () => {
             ref={ref2}
             style={{ y: booksY }}
           >
-            <li>
-              <BookLink />
-            </li>
-            <li>
-              <BookLink />
-            </li>
-            <li>
-              <BookLink />
-            </li>
+            {books.map((book, index) => (
+              <li key={index}>
+                <BookLink img={book.img} />
+              </li>
+            ))}
           </motion.ul>
         </div>
         <div className='new-arrivals__link-container'>
