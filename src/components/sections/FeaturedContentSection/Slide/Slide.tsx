@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useWindowSize } from '../../../../hooks';
 import './Slide.style.css';
 
@@ -17,10 +17,6 @@ export const Slide = ({ text, img }: Props) => {
   });
   const imageY = useTransform(scrollYProgress, [0, 1], ['4rem', '-4rem']);
   const textY = useTransform(scrollYProgress, [0, 1], ['-4rem', '4rem']);
-
-  useEffect(() => {
-    console.log('width', width < 749);
-  }, [width]);
 
   return (
     <div className='slide' ref={slideRef}>

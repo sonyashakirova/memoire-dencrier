@@ -6,7 +6,7 @@
   --wrapper-col-span-xs: 14;
   --wrapper-col-span-sm: 16;
   --wrapper-col-span: 18;
-  --col-width: calc(
+  --grid-col-width: calc(
     (100vw - var(--page-margin) * 2 - var(--grid-gap) * (var(--grid-cols) - 1)) /
       var(--grid-cols)
   );

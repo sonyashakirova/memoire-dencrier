@@ -104,3 +104,15 @@
   transform-origin: top right;
   transform: rotate(14deg);
 }
+
+.featured-content__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--twilight-background-color) 0 100%;
+  background-size: 100% 200%;
+  z-index: -10;
+  transition: opacity 0.1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}

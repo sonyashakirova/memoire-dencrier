@@ -1,5 +1,6 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useContext, useEffect, useRef } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { ColorContext } from '../../../providers';
 import './AboutSection.style.css';
 
 export const AboutSection = () => {
@@ -14,6 +15,18 @@ export const AboutSection = () => {
   const blackoutOpacity = useTransform(scrollYProgress, [0, 1], [0.8, 0.4]);
   const textY = useTransform(scrollYProgress, [0, 1], ['9rem', '-9rem']);
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+
+  const { setHeaderColor } = useContext(ColorContext);
+  const topInView = useInView(sectionRef, { margin: '-4% 0px -94% 0px' });
+  const bottomInView = useInView(sectionRef, { margin: '-96% 0px -4% 0px' });
+
+  useEffect(() => {
+    setHeaderColor({ top: topInView ? '#ea5a0b' : '#1d1d1b' });
+  }, [topInView]);
+
+  useEffect(() => {
+    setHeaderColor({ bottom: bottomInView ? '#ea5a0b' : '#1d1d1b' });
+  }, [bottomInView]);
 
   return (
     <motion.section className='about-section' ref={sectionRef}>

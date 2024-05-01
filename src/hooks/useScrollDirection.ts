@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export const useScrollDirection = () => {
   let oldScrollY = 0;
 
-  const [direction, setDirection] = useState('down');
+  const [direction, setDirection] = useState<'up' | 'down'>('down');
 
   const controlDirection = () => {
     if (window.scrollY > oldScrollY) {

@@ -1,13 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './SunBackground.style.css';
 
 export const SunBackground = () => {
+  const ref = useRef(null);
   const [startAnimation, setStartAnimation] = useState(true);
   const [sunset, setSunset] = useState(false);
   const sunsetClass = sunset ? 'sunset' : '';
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start', 'center start'],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -360]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -20,7 +25,7 @@ export const SunBackground = () => {
   return (
     <>
       <div className={`sun__background ${sunsetClass}`} />
-      <motion.div className='sun__container' style={{ y }}>
+      <motion.div className='sun__container' style={{ y }} ref={ref}>
         <motion.div
           className={`sun ${sunsetClass}`}
           onMouseEnter={() => !startAnimation && setSunset(true)}

@@ -15,6 +15,12 @@
     #fedcc4,
     rgb(254 220 196 / 0)
   );
+  --twilight-background-color: linear-gradient(
+    to top,
+    #aacdd4,
+    #badcd7,
+    rgb(254 220 196 / 0)
+  );
 }
 
 @media (prefers-color-scheme: dark) {

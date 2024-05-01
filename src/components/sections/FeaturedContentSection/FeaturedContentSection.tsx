@@ -1,5 +1,10 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { Slide } from './Slide';
 import './FeaturedContentSection.style.css';
 
@@ -31,6 +36,13 @@ export const FeaturedContentSection = () => {
   const [current, setCurrent] = useState(0);
   const [next, setNext] = useState(0);
   const [direction, setDirection] = useState('left');
+
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   const handleNext = () => {
     setDirection('left');
@@ -66,7 +78,8 @@ export const FeaturedContentSection = () => {
   }, [next]);
 
   return (
-    <section className='featured-content'>
+    <section className='featured-content' ref={sectionRef}>
+      <motion.div className='featured-content__bg' style={{ opacity }} />
       <div className='page-grid-sm'>
         <div className='featured-content__slider'>
           <div className='featured-content__slides'>
