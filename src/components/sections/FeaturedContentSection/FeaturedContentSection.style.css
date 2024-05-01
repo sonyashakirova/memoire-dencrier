@@ -1,48 +1,63 @@
 .featured-content {
   overflow: hidden;
-  padding: var(--spacing_7) 0;
-}
-
-.featured-content__slider {
-  justify-content: center;
-  width: 100%;
-  height: var(--ff-slider-slides-height, auto);
+  padding: var(--spacing-7) 0;
   display: flex;
-  padding: 0 50px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-7);
 }
 
-.hehe__not-hehe {
-  background-color: brown;
-  color: white;
-  font-size: 60px;
-  padding: 0 var(--spacing-3);
-  height: 300px;
-  width: 600px;
+@media screen and (max-width: 1199px) and (orientation: portrait) {
+  .featured-content {
+    margin-top: -50%;
+  }
 }
 
-.featured-content__slider button {
+@media screen and (max-width: 749px) {
+  .featured-content {
+    margin-top: 30%;
+  }
+}
+
+.featured-content__slide {
+  width: 100%;
+}
+
+.featured-content__nav {
   cursor: pointer;
   padding: 10px;
   position: absolute;
+  top: 0;
+  bottom: 0;
 }
 
-.featured-content__slider button.prev {
-  left: 0;
-  top: 50%;
+.featured-content__nav.prev {
+  left: calc(var(--page-margin) * -3.6);
+  transform: rotate(180deg);
 }
 
-.featured-content__slider button.next {
-  right: 0;
-  top: 50%;
+.featured-content__nav.next {
+  right: calc(var(--page-margin) * -3.6);
+}
+
+@media screen and (max-width: 1199px) {
+  .featured-content__nav {
+    display: none;
+  }
 }
 
 .featured-content__thumbnails {
-  display: flex;
-  margin-top: var(--spacing-4);
-  margin-bottom: 120px;
+  display: none;
+  margin-top: var(--spacing-7);
   gap: 30px;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .featured-content__thumbnails {
+    display: flex;
+  }
 }
 
 .featured-content__thumbnail {
@@ -55,4 +70,37 @@
 
 .featured-content__thumbnail.active {
   background-color: black;
+}
+
+.brrbrbrbrb {
+  display: block;
+  width: 2.5rem;
+  height: 11.5rem;
+  transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.brrbrbrbrb::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 5.75rem;
+  width: 1px;
+  background-color: #1d1d1b;
+  border-radius: 1px;
+  bottom: 50%;
+  transform-origin: bottom right;
+  transform: rotate(-14deg);
+}
+.brrbrbrbrb::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 5.75rem;
+  width: 1px;
+  background-color: #1d1d1b;
+  border-radius: 1px;
+  top: 50%;
+  transform-origin: top right;
+  transform: rotate(14deg);
 }

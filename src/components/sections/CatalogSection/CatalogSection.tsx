@@ -38,7 +38,7 @@ export const CatalogSection = () => {
     offset: ['start end', 'end start'],
   });
   const y = useTransform(outerScroll, [0, 1], ['80%', '-80%']);
-  const x = useTransform(outerScroll, [0, 1], [50, -50]);
+  const x = useTransform(outerScroll, [0, 1], [20, -20]);
   const onHover = (index: number) => {
     !isTouchDevice && setActive(index);
   };
@@ -47,7 +47,7 @@ export const CatalogSection = () => {
     <section
       className='catalog-section'
       ref={sectionRef}
-      style={{ height: isTouchDevice ? '250vh' : '70vh' }}
+      style={{ height: isTouchDevice ? '250vh' : '100vh' }}
     >
       <div className='catalog-section__inner' ref={innerRef}>
         <div className='catalog-section__grid page-grid'>

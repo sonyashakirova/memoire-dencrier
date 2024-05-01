@@ -1,15 +1,8 @@
 .new-arrivals {
   padding: var(--spacing-8) 0;
-  padding-top: 100vh;
+  padding-top: 70vh;
   text-align: center;
   pointer-events: none;
-}
-
-.new-arrivals__wrapper {
-  width: var(--wrapper-width-sm);
-  max-width: calc(100vw - var(--grid-margin) * 2);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .new-arrivals__title-container {
@@ -30,7 +23,7 @@
 }
 
 .new-arrivals__title {
-  top: 334px;
+  top: 45%;
   position: sticky;
   width: 100%;
   overflow: hidden;
@@ -50,7 +43,7 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  gap: var(--spacing-3);
+  gap: var(--spacing-7);
   justify-content: space-between;
   width: 100%;
   flex-grow: 1;
@@ -60,12 +53,31 @@
   screen and (max-width: 749px) {
   .new-arrivals__books {
     flex-direction: column;
+    gap: var(--spacing-8);
+  }
+}
+
+@media screen and (max-width: 1199px) and (orientation: portrait) {
+  .new-arrivals__books li {
+    margin: 0 calc(var(--col-width) * 4);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .new-arrivals__books li {
+    margin: 0 calc(var(--col-width) * 2);
   }
 }
 
 .new-arrivals__link-container {
   margin-top: var(--spacing-4);
   text-align: center;
+}
+
+@media screen and (max-width: 749px) {
+  .new-arrivals__link-container {
+    margin-top: var(--spacing-3);
+  }
 }
 
 .new-arrivals__link {

@@ -19,11 +19,11 @@
 :root {
   --base-font-family: Archivo, Arial, sans-serif;
   --heading-font-family: Gambarino, 'Times New Roman', serif;
-  --h1-font-size: 6rem;
+  --h1-font-size: 10rem;
   --h2-font-size: 4rem;
   --h3-font-size: 4rem;
   --h4-font-size: 3.2rem;
-  --base-font-size: 1.4rem;
+  --base-font-size: 2rem;
   --sm-font-size: 1rem;
 }
 
@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 749px) {
   :root {
-    --h1-font-size: 6rem;
+    --h1-font-size: 3.2rem;
     --h2-font-size: 1.9rem;
     --h3-font-size: 4rem;
     --h4-font-size: 3.2rem;

@@ -25,7 +25,7 @@
 
   .catalog-section__book-container {
     margin: var(--spacing-7) calc(var(--col-width) * 2) 0;
-    height: 60vh;
+    height: max-content;
   }
 }
 
