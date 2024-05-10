@@ -1,0 +1,33 @@
+.newsletter-form {
+  margin-top: var(--spacing-6);
+  color: #5525a9;
+}
+
+.newsletter-form__title {
+  margin-top: var(--spacing-6);
+  font-family: var(--heading-font-family);
+  font-size: 56px;
+  text-transform: uppercase;
+}
+
+.newsletter-form__email {
+  margin-top: var(--spacing-6);
+  display: flex;
+  border-bottom: 1px solid #5525a9;
+}
+
+.newsletter-form__input {
+  padding: 0.8em 0;
+  width: 100%;
+  color: inherit;
+}
+
+.newsletter-form__input::placeholder {
+  color: rgba(85, 37, 169, 0.5);
+}
+
+.newsletter-form__submit-button {
+  font-family: var(--heading-font-family);
+  color: inherit;
+  cursor: pointer;
+}

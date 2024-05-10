@@ -1,0 +1,5 @@
+.copyrights {
+  margin-top: var(--spacing-3);
+  border-top: 1px solid black;
+  padding: var(--spacing-3) 0 var(--spacing-5);
+}

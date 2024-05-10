@@ -1,3 +1,5 @@
+import './Copyrights.style.css';
+
 export const Copyrights = () => {
-  return <div>Copyrights</div>;
+  return <div className='copyrights'>Copyrights</div>;
 };
