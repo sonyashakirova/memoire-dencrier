@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import './BurgerButton.style.css';
 
 interface Props {
-  open?: boolean;
-  onClick?: () => void;
+  open: boolean;
+  onClick: () => void;
   color?: string;
 }
 
