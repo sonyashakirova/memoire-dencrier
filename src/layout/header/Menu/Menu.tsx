@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { EmailForm } from '../../../components/atoms';
 import { useDeviceType, useWindowSize } from '../../../hooks';
 import { lenis } from '../../../lenis';
 import './Menu.style.css';
@@ -181,25 +182,18 @@ export const Menu = ({ open }: Props) => {
           <div className='menu__email'>
             <AnimatePresence>
               {open && (
-                <motion.form
+                <motion.div
                   initial={{ y: 500 }}
                   animate={{ y: 0 }}
                   exit={{ y: 500 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <label htmlFor='email-input' className='menu__email-label'>
-                    Inscrivez-vous à notre infolettre
-                  </label>
-                  <input
-                    className='menu__email-input'
-                    id='email-input'
-                    type='text'
-                    placeholder='email'
+                  <EmailForm
+                    size='sm'
+                    label='Inscrivez-vous à notre infolettre'
+                    onSubmit={(email) => console.log('Email:', email)}
                   />
-                  <button type='submit' className='menu__email-submit'>
-                    Submit
-                  </button>
-                </motion.form>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>

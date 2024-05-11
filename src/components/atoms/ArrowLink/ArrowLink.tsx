@@ -6,11 +6,18 @@ interface Props extends PropsWithChildren {
   as?: 'a' | 'button';
   to?: string;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-export const ArrowLink = ({ children, as = 'a', to = '#', onClick }: Props) => {
+export const ArrowLink = ({
+  children,
+  as = 'a',
+  to = '#',
+  type = 'button',
+  onClick,
+}: Props) => {
   return as === 'button' ? (
-    <button className='arrow-link' onClick={onClick}>
+    <button className='arrow-link' onClick={onClick} type={type}>
       {children}
       <AnimatedArrow />
     </button>

@@ -1,12 +1,17 @@
 import { Copyrights } from './Copyrights';
-import { NewsletterForm } from './NewsletterForm';
+import { EmailForm } from '../../components/atoms';
 import './Footer.style.css';
 
 export const Footer = () => {
   return (
     <footer className='footer page-grid-sm'>
       <div className='footer__wrapper'>
-        <NewsletterForm />
+        <EmailForm
+          size='lg'
+          color='#5525a9'
+          label='Abonnez-vous à notre infolettre'
+          onSubmit={(email) => console.log('Email:', email)}
+        />
         <div className='footer__content'>
           <address className='footer__address'>
             <h4 className='footer__subtitle'>Où nous trouver</h4>
