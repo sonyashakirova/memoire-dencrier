@@ -2,7 +2,6 @@
   padding: var(--spacing-8) 0;
   padding-top: 70vh;
   text-align: center;
-  pointer-events: none;
 }
 
 .new-arrivals__title-container {
@@ -78,22 +77,4 @@
   .new-arrivals__link-container {
     margin-top: var(--spacing-3);
   }
-}
-
-.new-arrivals__link {
-  display: inline-block;
-  font-family: var(--heading_font_family);
-  font-size: var(--sm_font_size);
-}
-
-.cta::after {
-  content: '';
-  position: absolute;
-  right: 100%;
-  top: 0;
-  width: 0.85em;
-  height: 100%;
-  transform-origin: right center;
-  transform: scaleX(0);
-  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }

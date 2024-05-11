@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { ColorContext } from '../../../providers';
+import { ArrowLink } from '../../atoms';
 import './AboutSection.style.css';
 
 export const AboutSection = () => {
@@ -54,7 +55,7 @@ export const AboutSection = () => {
             racontent des histoires que l'on ne raconte pas.
           </motion.p>
           <p className='about-section__link'>
-            <a href='#'>En savoir plus</a>
+            <ArrowLink>En savoir plus</ArrowLink>
           </p>
         </motion.div>
       </div>

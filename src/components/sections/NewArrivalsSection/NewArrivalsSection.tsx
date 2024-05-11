@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollDirection, useWindowSize } from '../../../hooks';
-import { BookLink } from '../../atoms';
+import { ArrowLink, BookLink } from '../../atoms';
 import './NewArrivalsSection.style.css';
 
 const books = [
@@ -63,7 +63,7 @@ export const NewArrivalsSection = () => {
               className='new-arrivals__link-container'
               style={{ y: width > 749 ? linkY : 0 }}
             >
-              <a className='new-arrivals__link'>Découvrir tous nos livres</a>
+              <ArrowLink>Découvrir tous nos livres</ArrowLink>
             </motion.div>
           </motion.div>
         </div>
