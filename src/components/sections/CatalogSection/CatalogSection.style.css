@@ -31,8 +31,8 @@
 
 .catalog-section__categories {
   list-style: none;
-  font-family: var(--heading-font-family);
-  font-size: var(--h2-font-size);
+  font-family: var(--heading_font_family);
+  font-size: var(--h2_font_size);
   letter-spacing: 0.03em;
   text-transform: uppercase;
   display: grid;
@@ -41,7 +41,7 @@
 
 .catalog-section__title {
   text-transform: uppercase;
-  font-size: var(--sm-font-size);
+  font-size: var(--sm_font_size);
   margin-bottom: var(--spacing-5);
 }
 

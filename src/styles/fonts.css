@@ -17,69 +17,77 @@
 }
 
 :root {
-  --base-font-family: Archivo, Arial, sans-serif;
-  --heading-font-family: Gambarino, 'Times New Roman', serif;
-  --h1-font-size: 10rem;
-  --h2-font-size: 4rem;
-  --h3-font-size: 4rem;
-  --h4-font-size: 3.2rem;
-  --base-font-size: 2rem;
-  --sm-font-size: 1rem;
+  --base_font_family: Archivo, Arial, sans-serif;
+  --heading_font_family: Gambarino, 'Times New Roman', serif;
+  --h1_font_size: 10rem;
+  --h2_font_size: 5.6rem;
+  --h3_font_size: 4rem;
+  --h4_font_size: 2.4rem;
+  --base_font_size: 2.4rem;
+  --sm_font_size: 1.6rem;
+  --xs_font_size: 1.3rem;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1499px) {
   :root {
-    --h1-font-size: 6rem;
-    --h2-font-size: 3.4rem;
-    --h3-font-size: 4rem;
-    --h4-font-size: 3.2rem;
-    --base-font-size: 1.4rem;
-    --sm-font-size: 1rem;
+    --h1_font_size: 6.5rem;
+    --h2_font_size: 4.5rem;
+    --h3_font_size: 2.6rem;
+    --h4_font_size: 1.5rem;
+    --base_font_size: 1.5rem;
+    --sm_font_size: 1rem;
+    --xs_font_size: 0.8rem;
   }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 1099px) {
   :root {
-    --h1-font-size: 3.2rem;
-    --h2-font-size: 1.9rem;
-    --h3-font-size: 4rem;
-    --h4-font-size: 3.2rem;
-    --base-font-size: 1.4rem;
-    --sm-font-size: 1.1rem;
+    --h1_font_size: 5.5rem;
+    --h2_font_size: 3.25rem;
+    --h3_font_size: 2.25rem;
+    --h4_font_size: 1.25rem;
+    --base_font_size: 1.5rem;
+    --sm_font_size: 1.25rem;
+    --xs_font_size: 1rem;
+  }
+}
+
+@media screen and (max-width: 789px) {
+  :root {
+    --h1_font_size: 4.2rem;
+    --h2_font_size: 2.5rem;
+    --h3_font_size: 1.75rem;
+    --h4_font_size: 1rem;
+    --base_font_size: 1.1rem;
+    --sm_font_size: 0.8rem;
+    --xs_font_size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 439px) {
+  :root {
+    --h1_font_size: 3.25rem;
+    --h2_font_size: 1.8rem;
+    --h3_font_size: 1.8rem;
+    --h4_font_size: 1.3rem;
+    --base_font_size: 1rem;
+    --sm_font_size: 1rem;
+    --xs_font_size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  :root {
+    --h1_font_size: 2.6rem;
+    --h2_font_size: 1.5rem;
+    --h3_font_size: 1.5rem;
+    --h4_font_size: 1.1rem;
+    --base_font_size: 0.8rem;
+    --sm_font_size: 0.8rem;
+    --xs_font_size: 0.6rem;
   }
 }
 
 html {
   font-size: 16px;
 }
-
-/* 
-@media screen and (min-width: 400px) {
-  html {
-    font-size: 10px;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  html {
-    font-size: 19px;
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  html {
-    font-size: 30px;
-  }
-} */

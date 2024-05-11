@@ -42,3 +42,11 @@
 .footer ul {
   list-style: none;
 }
+
+.footer__subtitle {
+  font-size: var(--xs_font_size);
+}
+
+.footer__text {
+  font-size: var(--h4_font_size);
+}

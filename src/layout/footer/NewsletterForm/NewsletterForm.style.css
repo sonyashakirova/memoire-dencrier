@@ -5,9 +5,15 @@
 
 .newsletter-form__title {
   margin-top: var(--spacing-6);
-  font-family: var(--heading-font-family);
-  font-size: 56px;
+  font-family: var(--heading_font_family);
+  font-size: var(--h2_font_size);
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 749px) {
+  .newsletter-form__title {
+    font-size: var(--h1_font_size);
+  }
 }
 
 .newsletter-form__email {
@@ -17,6 +23,7 @@
 }
 
 .newsletter-form__input {
+  font-size: 1rem;
   padding: 0.8em 0;
   width: 100%;
   color: inherit;
@@ -27,7 +34,8 @@
 }
 
 .newsletter-form__submit-button {
-  font-family: var(--heading-font-family);
+  font-family: var(--heading_font_family);
+  font-size: var(--sm_font_size);
   color: inherit;
   cursor: pointer;
 }

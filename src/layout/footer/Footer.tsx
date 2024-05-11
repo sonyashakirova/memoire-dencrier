@@ -9,13 +9,15 @@ export const Footer = () => {
         <NewsletterForm />
         <div className='footer__content'>
           <address className='footer__address'>
-            <h4>Où nous trouver</h4>
-            <a>1260, rue Bélanger, Bureau 201 Montréal (Québec) H2S 1H9</a>
+            <h4 className='footer__subtitle'>Où nous trouver</h4>
+            <a className='footer__text'>
+              1260, rue Bélanger, Bureau 201 Montréal (Québec) H2S 1H9
+            </a>
           </address>
           <nav className='footer__navigation'>
             <div>
-              <h4>Explorer</h4>
-              <ul>
+              <h4 className='footer__subtitle'>Explorer</h4>
+              <ul className='footer__text'>
                 <li>
                   <a>1</a>
                 </li>
@@ -28,8 +30,8 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4>Suivez-nous</h4>
-              <ul>
+              <h4 className='footer__subtitle'>Suivez-nous</h4>
+              <ul className='footer__text'>
                 <li>
                   <a>1</a>
                 </li>

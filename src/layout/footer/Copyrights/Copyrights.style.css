@@ -2,4 +2,11 @@
   margin-top: var(--spacing-3);
   border-top: 1px solid black;
   padding: var(--spacing-3) 0 var(--spacing-5);
+  font-size: var(--xs_font_size);
+}
+
+@media screen and (max-width: 749px) {
+  .copyrights {
+    font-size: var(--base_font_size);
+  }
 }

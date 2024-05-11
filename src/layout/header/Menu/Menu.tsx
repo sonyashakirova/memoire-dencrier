@@ -95,6 +95,7 @@ export const Menu = ({ open }: Props) => {
                   <AnimatePresence>
                     {open && sublist && !!item.sublist?.length && (
                       <motion.ul
+                        className='menu__sublist'
                         initial={{ height: 0 }}
                         animate={{ height: item.sublist.length * 24 }}
                         exit={{ height: 0 }}
@@ -139,7 +140,6 @@ export const Menu = ({ open }: Props) => {
             )}
           </AnimatePresence>
         </div>
-
         <div className='menu__side'>
           <div>
             <ul className='menu__socials'>
@@ -181,17 +181,25 @@ export const Menu = ({ open }: Props) => {
           <div className='menu__email'>
             <AnimatePresence>
               {open && (
-                <motion.div
+                <motion.form
                   initial={{ y: 500 }}
                   animate={{ y: 0 }}
                   exit={{ y: 500 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <label htmlFor='email-input'>
+                  <label htmlFor='email-input' className='menu__email-label'>
                     Inscrivez-vous à notre infolettre
                   </label>
-                  <input id='email-input' type='text' placeholder='email' />
-                </motion.div>
+                  <input
+                    className='menu__email-input'
+                    id='email-input'
+                    type='text'
+                    placeholder='email'
+                  />
+                  <button type='submit' className='menu__email-submit'>
+                    Submit
+                  </button>
+                </motion.form>
               )}
             </AnimatePresence>
           </div>

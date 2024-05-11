@@ -15,8 +15,8 @@
 }
 
 .intro-section__title {
-  font-family: var(--heading-font-family);
-  font-size: var(--h1-font-size);
+  font-family: var(--heading_font_family);
+  font-size: var(--h1_font_size);
   transition: transform 0.3s ease-out;
 }
 
@@ -26,7 +26,7 @@
 
 .intro-section__title > span {
   overflow-y: hidden;
-  height: var(--h1-font-size);
+  height: var(--h1_font_size);
   line-height: 1.2;
   display: flex;
   align-content: end;

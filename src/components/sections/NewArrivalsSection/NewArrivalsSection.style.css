@@ -18,7 +18,7 @@
   screen and (max-width: 749px) {
   .new-arrivals__title-container {
     height: calc(100% + 150vh);
-    bottom: calc(var(--home_latest_books_mobile_title_bottom, 50%) - 0.6em);
+    bottom: calc(50% - 0.6em);
   }
 }
 
@@ -28,8 +28,8 @@
   width: 100%;
   overflow: hidden;
   text-align: center;
-  font-size: var(--h1-font-size);
-  font-family: var(--heading-font-family);
+  font-size: var(--h1_font_size);
+  font-family: var(--heading_font_family);
   text-transform: uppercase;
 }
 
@@ -82,8 +82,8 @@
 
 .new-arrivals__link {
   display: inline-block;
-  font-size: calc(18 / var(--base-px) * 1rem);
-  font-family: var(--heading-font-family);
+  font-family: var(--heading_font_family);
+  font-size: var(--sm_font_size);
 }
 
 .cta::after {
