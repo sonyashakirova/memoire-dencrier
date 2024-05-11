@@ -14,6 +14,7 @@ export const Header = () => {
   const direction = useScrollDirection();
   const topControls = useAnimationControls();
   const bottomControls = useAnimationControls();
+  const [bottomY, setBottomY] = useState(0);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -37,9 +38,27 @@ export const Header = () => {
     if (open) {
       bottomControls.start({ y: 100 });
     } else if (!startAnimation) {
-      bottomControls.start({ y: 0 });
+      bottomControls.start({ y: bottomY });
     }
   }, [open, startAnimation]);
+
+  useEffect(() => {
+    const stopBottomScroll = () => {
+      const bottomStop = document.body.offsetHeight - 100;
+      const currentScroll = window.innerHeight + window.scrollY;
+
+      if (currentScroll >= bottomStop) {
+        setBottomY(bottomStop - currentScroll);
+        bottomControls.set({ y: bottomStop - currentScroll });
+      } else {
+        setBottomY(0);
+        bottomControls.set({ y: 0 });
+      }
+    };
+
+    window.addEventListener('scroll', stopBottomScroll);
+    return () => window.removeEventListener('scroll', stopBottomScroll);
+  }, []);
 
   return (
     <header className='header'>

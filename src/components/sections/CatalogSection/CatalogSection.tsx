@@ -8,6 +8,7 @@ import {
 import { useRef, useState } from 'react';
 import { BookLink } from '../../atoms';
 import './CatalogSection.style.css';
+import { useDeviceType } from '../../../hooks';
 
 const categories = [
   { name: 'Roman/Récit', book: { img: 'book-01.jpg' } },
@@ -19,9 +20,7 @@ const categories = [
 
 export const CatalogSection = () => {
   const [active, setActive] = useState(0);
-  const isTouchDevice = !!(
-    'ontouchstart' in window || navigator.maxTouchPoints
-  );
+  const { isTouchDevice } = useDeviceType();
 
   // Touch device animations
   const sectionRef = useRef(null);
