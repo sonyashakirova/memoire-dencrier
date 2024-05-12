@@ -1,7 +1,9 @@
 :root {
-  --font-color: #1d1d1b;
-  --background-color: #f0ebe8;
-  --font-color-active: #ea5a0b;
+  --font_color: #1d1d1b;
+  --font_color_active: #ea5a0b;
+  --font_color_secondary: #5525a9;
+  --background_color: #f0ebe8;
+
   --sun-color: #f0eb65;
   --sunset-color: linear-gradient(
     to bottom,

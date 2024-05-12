@@ -14,7 +14,7 @@
 }
 
 .arrow-link:hover {
-  transform: translateX(16px);
+  transform: translateX(8px);
 }
 
 .animated-arrow {
@@ -30,7 +30,7 @@
   display: flex;
   justify-content: center;
   transform: translateX(-50%);
-  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .arrow-link:hover .animated-arrow__inner {
