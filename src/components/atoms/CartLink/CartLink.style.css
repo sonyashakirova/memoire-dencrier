@@ -3,9 +3,11 @@
   text-decoration: none;
   color: inherit;
   margin-left: 0.3rem;
+  pointer-events: auto;
 }
 
 .cart-link__count {
+  font-size: 1.2rem;
   position: absolute;
   top: 10%;
   left: 50%;

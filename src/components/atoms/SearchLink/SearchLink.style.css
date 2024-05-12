@@ -3,6 +3,7 @@
   text-decoration: none;
   color: inherit;
   margin-left: 0.3rem;
+  pointer-events: auto;
 }
 
 .search-link svg {

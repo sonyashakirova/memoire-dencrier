@@ -3,13 +3,13 @@ import './CartLink.style.css';
 
 const booksCount = 0;
 
-export const CartLink = () => {
+interface Props {
+  to: string;
+}
+
+export const CartLink = ({ to }: Props) => {
   return (
-    <Link
-      className='cart-link'
-      to='/panier'
-      aria-label="Aller à la page 'Panier'"
-    >
+    <Link className='cart-link' to={to} aria-label="Aller à la page 'Panier'">
       <span className='cart-link__count'>{booksCount}</span>
       <CartSVG />
     </Link>

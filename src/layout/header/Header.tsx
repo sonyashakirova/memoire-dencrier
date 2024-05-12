@@ -68,15 +68,12 @@ export const Header = () => {
           initial={{ y: -100 }}
           animate={topControls}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
+          style={{ color: open ? '#1d1d1b' : headerColor.top }}
         >
-          <BurgerButton
-            color={headerColor.top}
-            open={open}
-            onClick={() => setOpen((prev) => !prev)}
-          />
-          <div style={{ color: headerColor.top }}>
-            <SearchLink />
-            <CartLink />
+          <BurgerButton open={open} onClick={() => setOpen((prev) => !prev)} />
+          <div>
+            <SearchLink to='/recherche' />
+            <CartLink to='/panier' />
           </div>
         </motion.div>
         <motion.div

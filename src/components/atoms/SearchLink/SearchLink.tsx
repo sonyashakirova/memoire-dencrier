@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
 import './SearchLink.style.css';
 
-export const SearchLink = () => {
+interface Props {
+  to: string;
+}
+
+export const SearchLink = ({ to }: Props) => {
   return (
     <Link
+      to={to}
       className='search-link'
-      to='/recherche'
       aria-label="Aller à la page 'Recherche'"
     >
       <SearchSVG />
