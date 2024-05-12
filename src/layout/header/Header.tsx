@@ -1,6 +1,6 @@
 import { motion, useAnimationControls } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
-import { BurgerButton } from '../../components/atoms';
+import { BurgerButton, CartLink, SearchLink } from '../../components/atoms';
 import { ColorContext } from '../../providers';
 import { useScrollDirection } from '../../hooks';
 import { Logo } from './Logo';
@@ -74,7 +74,10 @@ export const Header = () => {
             open={open}
             onClick={() => setOpen((prev) => !prev)}
           />
-          <div style={{ color: headerColor.top }}>user navigation</div>
+          <div style={{ color: headerColor.top }}>
+            <SearchLink />
+            <CartLink />
+          </div>
         </motion.div>
         <motion.div
           className='header__bottom'

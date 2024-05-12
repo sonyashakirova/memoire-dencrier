@@ -1,0 +1,22 @@
+.cart-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-left: 0.3rem;
+}
+
+.cart-link__count {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cart-link:hover .cart-link__count {
+  transform: translate(-50%, -5px);
+}
+
+.cart-link svg {
+  stroke: currentColor;
+}

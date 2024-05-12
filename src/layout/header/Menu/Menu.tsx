@@ -29,9 +29,9 @@ const socials = [
   { name: 'Facebook', link: '' },
 ];
 const contacts = [
-  { name: '1', link: '' },
-  { name: '2', link: '' },
-  { name: '3', link: '' },
+  { name: 'Contactez-nous', link: '' },
+  { name: 'Actualités', link: '' },
+  { name: 'Manuscrits', link: '' },
 ];
 
 interface Props {

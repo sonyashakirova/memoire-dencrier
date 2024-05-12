@@ -1,0 +1,15 @@
+.search-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin-left: 0.3rem;
+}
+
+.search-link svg {
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  fill: currentColor;
+}
+
+.search-link:hover svg {
+  transform: rotate(-15deg);
+}

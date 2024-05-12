@@ -50,3 +50,10 @@ html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+html.lenis [data-lenis-prevent] {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+}
