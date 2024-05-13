@@ -1,0 +1,10 @@
+.animated-text {
+  display: inline-block;
+  overflow: hidden;
+  padding-top: 0.2rem;
+}
+
+.animated-text > span {
+  display: inline-block;
+  pointer-events: none;
+}

@@ -1,8 +1,8 @@
 .burger {
-  --burger_width: 36px;
-  --burger_height: 18px;
+  --burger_width: 50px;
+  --burger_height: 20px;
   --burger_line_height: 2px;
-  --burger_line_offset: 8px;
+  --burger_line_offset: 9px;
   width: var(--burger_width);
   height: var(--burger_height);
   display: flex;
@@ -12,6 +12,30 @@
   cursor: pointer;
   color: inherit;
   transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media screen and (max-width: 1440px) {
+  .burger {
+    --burger_width: 40px;
+    --burger_height: 18px;
+    --burger_line_offset: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .burger {
+    --burger_width: 28px;
+    --burger_height: 18px;
+    --burger_line_offset: 8px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .burger {
+    --burger_width: 24px;
+    --burger_height: 16px;
+    --burger_line_offset: 7px;
+  }
 }
 
 .burger__line {

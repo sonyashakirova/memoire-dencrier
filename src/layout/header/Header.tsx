@@ -9,7 +9,7 @@ import './Header.style.css';
 
 export const Header = () => {
   const { headerColor } = useContext(ColorContext);
-  const [open, setOpen] = useState(false);
+  const [isMenuOpened, setMenuState] = useState(false);
   const [startAnimation, setStartAnimation] = useState(true);
   const direction = useScrollDirection();
   const topControls = useAnimationControls();
@@ -27,7 +27,7 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (direction === 'down' && !open) {
+    if (direction === 'down' && !isMenuOpened) {
       topControls.start({ y: -100 });
     } else if (direction === 'up') {
       topControls.start({ y: 0 });
@@ -35,12 +35,12 @@ export const Header = () => {
   }, [direction]);
 
   useEffect(() => {
-    if (open) {
+    if (isMenuOpened) {
       bottomControls.start({ y: 100 });
     } else if (!startAnimation) {
       bottomControls.start({ y: bottomY });
     }
-  }, [open, startAnimation]);
+  }, [isMenuOpened, startAnimation]);
 
   useEffect(() => {
     const stopBottomScroll = () => {
@@ -68,9 +68,12 @@ export const Header = () => {
           initial={{ y: -100 }}
           animate={topControls}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          style={{ color: open ? '#1d1d1b' : headerColor.top }}
+          style={{ color: isMenuOpened ? '#1d1d1b' : headerColor.top }}
         >
-          <BurgerButton open={open} onClick={() => setOpen((prev) => !prev)} />
+          <BurgerButton
+            open={isMenuOpened}
+            onClick={() => setMenuState((prev) => !prev)}
+          />
           <div>
             <SearchLink to='/recherche' />
             <CartLink to='/panier' />
@@ -81,12 +84,12 @@ export const Header = () => {
           initial={{ y: 100 }}
           animate={bottomControls}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
+          style={{ color: headerColor.bottom }}
         >
           <Logo />
-          {/* <div style={{ color: headerColor.bottom }}>Logo</div> */}
         </motion.div>
       </div>
-      <Menu open={open} />
+      <Menu open={isMenuOpened} />
     </header>
   );
 };

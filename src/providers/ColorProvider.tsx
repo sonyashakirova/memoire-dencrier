@@ -3,8 +3,8 @@ import { PropsWithChildren, createContext, useState } from 'react';
 type HeaderColorType = { top: string; bottom: string };
 
 type ContextValueType = {
-  setHeaderColor: (color: Partial<HeaderColorType>) => void;
   headerColor: HeaderColorType;
+  setHeaderColor: (color: Partial<HeaderColorType>) => void;
 };
 
 const defaultHeaderColor = {
@@ -12,7 +12,10 @@ const defaultHeaderColor = {
   bottom: '#1d1d1b',
 };
 
-export const ColorContext = createContext<ContextValueType>();
+export const ColorContext = createContext<ContextValueType>({
+  headerColor: defaultHeaderColor,
+  setHeaderColor: () => {},
+});
 
 export const ColorProvider = ({ children }: PropsWithChildren) => {
   const [state, setState] = useState(defaultHeaderColor);

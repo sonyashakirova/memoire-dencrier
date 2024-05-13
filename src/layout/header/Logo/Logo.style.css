@@ -1,8 +1,73 @@
 .logo {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
+}
+
+.logo__link {
+  display: inline-block;
+  pointer-events: auto;
   text-transform: uppercase;
-  font-size: 32px;
-  letter-spacing: -0.01em;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  transform: scaleY(1.4);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 749px) {
+  .logo__link {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  .logo__link {
+    font-size: 16px;
+  }
+}
+
+.logo__link .sun-icon {
+  transform: scaleY(0.71);
+}
+
+.logo__icon-container {
+  display: inline-block;
+  margin-right: 32px;
+}
+
+@media screen and (max-width: 749px) {
+  .logo__icon-container {
+    margin-right: 24px;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  .logo__icon-container {
+    margin-right: 16px;
+  }
+}
+
+.sun-icon {
+  width: 54px;
+  height: 40px;
+  fill: currentColor;
+  display: inline-block;
+}
+
+@media screen and (max-width: 749px) {
+  .sun-icon {
+    width: 46px;
+    height: 34px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .sun-icon {
+    width: 42px;
+    height: 30px;
+  }
 }
