@@ -1,26 +1,26 @@
 import { motion, useAnimationControls } from 'framer-motion';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { BurgerButton, CartLink, SearchLink } from '../../components/atoms';
 import { ColorContext } from '../../providers';
-import { useScrollDirection } from '../../hooks';
+import { useScrollDirection, useScrollOffset } from '../../hooks';
 import { Logo } from './Logo';
 import { Menu } from './Menu';
 import './Header.style.css';
 
 export const Header = () => {
   const { headerColor } = useContext(ColorContext);
-  const [isMenuOpened, setMenuState] = useState(false);
-  const [startAnimation, setStartAnimation] = useState(true);
+  const [isStartAnimationRunning, setStartAnimationRunning] = useState(true);
+  const [isMenuOpened, setMenuOpened] = useState(false);
+  const headerTopAnimation = useAnimationControls();
+  const headerBottomAnimation = useAnimationControls();
   const direction = useScrollDirection();
-  const topControls = useAnimationControls();
-  const bottomControls = useAnimationControls();
-  const [bottomY, setBottomY] = useState(0);
+  const bottomY = useRef(0);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      topControls.start({ y: 0 });
-      bottomControls.start({ y: 0 });
-      setStartAnimation(false);
+      headerTopAnimation.start({ y: 0 });
+      headerBottomAnimation.start({ y: 0 });
+      setStartAnimationRunning(false);
     }, 3000);
 
     return () => clearTimeout(timeout);
@@ -28,37 +28,24 @@ export const Header = () => {
 
   useEffect(() => {
     if (direction === 'down' && !isMenuOpened) {
-      topControls.start({ y: -100 });
+      headerTopAnimation.start({ y: -100 });
     } else if (direction === 'up') {
-      topControls.start({ y: 0 });
+      headerTopAnimation.start({ y: 0 });
     }
   }, [direction]);
 
   useEffect(() => {
     if (isMenuOpened) {
-      bottomControls.start({ y: 100 });
-    } else if (!startAnimation) {
-      bottomControls.start({ y: bottomY });
+      headerBottomAnimation.start({ y: 100 });
+    } else if (!isStartAnimationRunning) {
+      headerBottomAnimation.start({ y: bottomY.current });
     }
-  }, [isMenuOpened, startAnimation]);
+  }, [isMenuOpened, isStartAnimationRunning]);
 
-  useEffect(() => {
-    const stopBottomScroll = () => {
-      const bottomStop = document.body.offsetHeight - 100;
-      const currentScroll = window.innerHeight + window.scrollY;
-
-      if (currentScroll >= bottomStop) {
-        setBottomY(bottomStop - currentScroll);
-        bottomControls.set({ y: bottomStop - currentScroll });
-      } else {
-        setBottomY(0);
-        bottomControls.set({ y: 0 });
-      }
-    };
-
-    window.addEventListener('scroll', stopBottomScroll);
-    return () => window.removeEventListener('scroll', stopBottomScroll);
-  }, []);
+  useScrollOffset((y) => {
+    bottomY.current = y;
+    headerBottomAnimation.set({ y });
+  }, 100);
 
   return (
     <header className='header'>
@@ -66,13 +53,12 @@ export const Header = () => {
         <motion.div
           className='header__top'
           initial={{ y: -100 }}
-          animate={topControls}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          animate={headerTopAnimation}
           style={{ color: isMenuOpened ? '#1d1d1b' : headerColor.top }}
         >
           <BurgerButton
             open={isMenuOpened}
-            onClick={() => setMenuState((prev) => !prev)}
+            onClick={() => setMenuOpened((prev) => !prev)}
           />
           <div>
             <SearchLink to='/recherche' />
@@ -82,8 +68,7 @@ export const Header = () => {
         <motion.div
           className='header__bottom'
           initial={{ y: 100 }}
-          animate={bottomControls}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          animate={headerBottomAnimation}
           style={{ color: headerColor.bottom }}
         >
           <Logo />

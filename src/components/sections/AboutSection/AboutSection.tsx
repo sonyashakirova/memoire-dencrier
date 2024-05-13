@@ -18,8 +18,8 @@ export const AboutSection = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   const { setHeaderColor } = useContext(ColorContext);
-  const topInView = useInView(sectionRef, { margin: '-4% 0px -94% 0px' });
-  const bottomInView = useInView(sectionRef, { margin: '-96% 0px -4% 0px' });
+  const topInView = useInView(sectionRef, { margin: '-12% 0px -94% 0px' });
+  const bottomInView = useInView(sectionRef, { margin: '-94% 0px -10% 0px' });
 
   useEffect(() => {
     setHeaderColor({ top: topInView ? '#ea5a0b' : '#1d1d1b' });

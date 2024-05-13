@@ -1,21 +1,21 @@
 :root {
-  --header-top-height: 10rem;
-  --page-margin: 2rem;
+  --header_top_height: 10rem;
+  --page_margin: 2rem;
   --grid-cols: 20;
   --grid-gap: 1.2rem;
   --wrapper-col-span-xs: 14;
   --wrapper-col-span-sm: 16;
   --wrapper-col-span: 18;
   --grid-col-width: calc(
-    (100vw - var(--page-margin) * 2 - var(--grid-gap) * (var(--grid-cols) - 1)) /
+    (100vw - var(--page_margin) * 2 - var(--grid-gap) * (var(--grid-cols) - 1)) /
       var(--grid-cols)
   );
 }
 
 @media screen and (max-width: 1199px) {
   :root {
-    --header-top-height: 8rem;
-    --page-margin: 3rem;
+    --header_top_height: 8rem;
+    --page_margin: 3rem;
     --grid-cols: 12;
     --grid-gap: 1rem;
     --wrapper-col-span-xs: 10;
@@ -26,8 +26,8 @@
 
 @media screen and (max-width: 749px) {
   :root {
-    --header-top-height: 6rem;
-    --page-margin: 2rem;
+    --header_top_height: 6rem;
+    --page_margin: 2rem;
     --grid-cols: 8;
     --grid-gap: 0.55rem;
     --wrapper-col-span-xs: 8;
@@ -42,7 +42,7 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
   gap: var(--grid-gap);
-  margin: 0 var(--page-margin);
+  margin: 0 var(--page_margin);
 }
 
 .page-grid-xs {

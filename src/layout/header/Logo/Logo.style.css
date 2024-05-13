@@ -5,6 +5,11 @@
   width: 100%;
 }
 
+.logo > div {
+  overflow: hidden;
+  padding-top: 0.4em;
+}
+
 .logo__link {
   display: inline-block;
   pointer-events: auto;
