@@ -9,7 +9,7 @@
 }
 
 .catalog-section__categories-container {
-  grid-column-end: calc((var(--grid-cols) - var(--wrapper-col-span)) / -2 - 7);
+  grid-column-end: calc((var(--grid_cols) - var(--wrapper_col_span)) / -2 - 7);
   place-content: center;
 }
 
@@ -24,7 +24,7 @@
   }
 
   .catalog-section__book-container {
-    margin: var(--spacing_7) calc(var(--grid-col-width) * 2) 0;
+    margin: var(--spacing_7) calc(var(--grid_col_width) * 2) 0;
     height: max-content;
   }
 }
@@ -52,5 +52,5 @@
 }
 
 .catalog-section__link.active {
-  color: var(--font-color-active);
+  color: var(--font_color_active);
 }

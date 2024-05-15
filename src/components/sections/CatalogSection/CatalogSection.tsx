@@ -6,9 +6,9 @@ import {
   useTransform,
 } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { useDeviceType } from '../../../hooks';
 import { BookLink } from '../../atoms';
 import './CatalogSection.style.css';
-import { useDeviceType } from '../../../hooks';
 
 const categories = [
   { name: 'Roman/Récit', book: { img: 'book-01.jpg' } },
@@ -61,7 +61,7 @@ export const CatalogSection = () => {
                   <a
                     onMouseEnter={() => onHover(index)}
                     className={`catalog-section__link ${
-                      active === index ? 'active' : ''
+                      active === index && 'active'
                     }`}
                   >
                     {category.name}

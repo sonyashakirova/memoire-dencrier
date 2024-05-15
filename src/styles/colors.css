@@ -24,10 +24,3 @@
     rgb(254 220 196 / 0)
   );
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --font_color: #f0ebe8;
-    --background_color: #1d1d1b;
-  }
-}

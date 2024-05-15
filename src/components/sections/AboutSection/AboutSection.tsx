@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import imgUrl from '../../../assets/images/about-image.jpg';
 import { ColorContext } from '../../../providers';
+import { useIntersectionObserver } from '../../../hooks';
 import { ArrowLink } from '../../atoms';
 import './AboutSection.style.css';
 
@@ -22,16 +23,15 @@ export const AboutSection = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   const { setHeaderColor } = useContext(ColorContext);
-  const topInView = useInView(sectionRef, { margin: '-12% 0px -94% 0px' });
-  const bottomInView = useInView(sectionRef, { margin: '-94% 0px -10% 0px' });
+
+  const visible = useIntersectionObserver(sectionRef, '0px');
 
   useEffect(() => {
-    setHeaderColor({ top: topInView ? '#ea5a0b' : '#1d1d1b' });
-  }, [topInView]);
-
-  useEffect(() => {
-    setHeaderColor({ bottom: bottomInView ? '#ea5a0b' : '#1d1d1b' });
-  }, [bottomInView]);
+    setHeaderColor({
+      top: visible ? '#ea5a0b' : '#1d1d1b',
+      bottom: visible ? '#ea5a0b' : '#1d1d1b',
+    });
+  }, [visible]);
 
   return (
     <motion.section className='about-section' ref={sectionRef}>
