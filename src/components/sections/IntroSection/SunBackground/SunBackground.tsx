@@ -6,7 +6,6 @@ export const SunBackground = () => {
   const ref = useRef(null);
   const [startAnimation, setStartAnimation] = useState(true);
   const [sunset, setSunset] = useState(false);
-  const sunsetClass = sunset ? 'sunset' : '';
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -24,10 +23,10 @@ export const SunBackground = () => {
 
   return (
     <>
-      <div className={`sun__background ${sunsetClass}`} />
+      <div className={`sun__background ${sunset && 'sunset'}`} />
       <motion.div className='sun__container' style={{ y }} ref={ref}>
         <motion.div
-          className={`sun ${sunsetClass}`}
+          className={`sun ${sunset && 'sunset'}`}
           onMouseEnter={() => !startAnimation && setSunset(true)}
           onMouseLeave={() => setSunset(false)}
           initial={{ transform: 'translate(-30vw, -30vh) scale(3)' }}

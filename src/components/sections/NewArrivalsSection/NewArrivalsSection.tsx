@@ -11,31 +11,18 @@ const books = [
 ];
 
 export const NewArrivalsSection = () => {
+  const ref = useRef(null);
   const direction = useScrollDirection();
   const { width } = useWindowSize();
-
-  // const ref = useRef(null);
-  // const ref2 = useRef(null);
-  // const { scrollYProgress } = useScroll({ target: ref });
-  // const { scrollYProgress: scroll2 } = useScroll({ target: ref2 });
-  // const opacity = useTransform(scrollYProgress, [0.2, 0.7], [0, 1]);
-  // const y = useTransform(scrollYProgress, [0.1, 0.6], [100, 0]);
-  // const booksY = useTransform(scroll2, [0, 1], [-200, 0], { ease: easeInOut });
-
-  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
 
   const y = useTransform(scrollYProgress, [0.1, 0.2], [200, 0]);
-  const opacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
   const booksY = useTransform(scrollYProgress, [0, 1], ['70%', '-70%']);
   const linkY = useTransform(scrollYProgress, [0, 1], [-80, 80]);
-
-  // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-  //   console.log('latest', latest);
-  // });
 
   return (
     <section className='new-arrivals' ref={ref}>

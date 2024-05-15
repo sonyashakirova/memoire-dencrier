@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: var(--sunset-background-color) 0 100%;
+  background: var(--sunset_background_color) 0 100%;
   background-size: 100% 200%;
   opacity: 0;
   transition:
@@ -23,16 +23,16 @@
 }
 
 .sun {
-  --sun-diameter: calc(
-    (var(--grid-col-width) + var(--grid-gap)) * 9 - var(--grid-gap)
+  --sun_diameter: calc(
+    (var(--grid_col_width) + var(--grid_gap)) * 9 - var(--grid_gap)
   );
   display: inline-block;
   position: absolute;
-  bottom: calc(100vh - var(--sun-diameter) / 4);
-  right: calc(var(--grid-col-width) * 2 - var(--grid-gap));
-  width: var(--sun-diameter);
-  height: var(--sun-diameter);
-  background: var(--sun-color);
+  bottom: calc(100vh - var(--sun_diameter) / 4);
+  right: calc(var(--grid_col_width) * 2 - var(--grid_gap));
+  width: var(--sun_diameter);
+  height: var(--sun_diameter);
+  background: var(--sun_color);
   border-radius: 50%;
   overflow: hidden;
   pointer-events: auto;
@@ -40,31 +40,31 @@
 
 @media screen and (max-width: 1199px) {
   .sun {
-    --sun-diameter: calc(
-      (var(--grid-col-width) + var(--grid-gap)) * 8 - var(--grid-gap)
+    --sun_diameter: calc(
+      (var(--grid_col_width) + var(--grid_gap)) * 8 - var(--grid_gap)
     );
     top: calc(100vh * 0.395);
-    right: calc(var(--grid-gap) * -3 + var(--grid-col-width) * -1);
+    right: calc(var(--grid_gap) * -3 + var(--grid_col_width) * -1);
   }
 }
 
 @media screen and (max-width: 1199px) and (orientation: portrait),
   screen and (max-width: 749px) {
   .sun {
-    --sun-diameter: calc(
-      (var(--grid-col-width) + var(--grid-gap)) * 12 - var(--grid-gap)
+    --sun_diameter: calc(
+      (var(--grid_col_width) + var(--grid_gap)) * 12 - var(--grid_gap)
     );
     top: calc(100vh * 0.425);
-    right: calc(var(--grid-gap) * -5 + var(--grid-col-width) * -3);
+    right: calc(var(--grid_gap) * -5 + var(--grid_col_width) * -3);
   }
 }
 
 @media screen and (max-width: 749px) {
   .sun {
-    --sun-diameter: 45rem;
+    --sun_diameter: 45rem;
     top: calc(100vh * 0.35);
     right: auto;
-    left: calc(var(--grid-margin) + var(--grid-gap) + var(--grid-col-width));
+    left: calc(var(--grid_margin) + var(--grid_gap) + var(--grid_col_width));
   }
 }
 
@@ -75,7 +75,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--sunset-color) 0 100%;
+  background: var(--sunset_color) 0 100%;
   background-size: 100% 200%;
   opacity: 0;
   pointer-events: none;

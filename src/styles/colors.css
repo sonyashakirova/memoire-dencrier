@@ -4,21 +4,20 @@
   --font_color_secondary: #5525a9;
   --font_color_contrast: #f3f3f3;
   --background_color: #f0ebe8;
-
-  --sun-color: #f0eb65;
-  --sunset-color: linear-gradient(
+  --sun_color: #f0eb65;
+  --sunset_color: linear-gradient(
     to bottom,
     #ff6c78,
     #ffb5bb,
-    var(--sun-color)
+    var(--sun_color)
   );
-  --sunset-background-color: linear-gradient(
+  --sunset_background_color: linear-gradient(
     to bottom,
     #ffb8be,
     #fedcc4,
     rgb(254 220 196 / 0)
   );
-  --twilight-background-color: linear-gradient(
+  --twilight_background_color: linear-gradient(
     to top,
     #aacdd4,
     #badcd7,
@@ -28,7 +27,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --font-color: #f0ebe8;
-    --background-color: #1d1d1b;
+    --font_color: #f0ebe8;
+    --background_color: #1d1d1b;
   }
 }

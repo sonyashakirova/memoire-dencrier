@@ -58,13 +58,13 @@
 
 @media screen and (max-width: 1199px) and (orientation: portrait) {
   .new-arrivals__books li {
-    margin: 0 calc(var(--grid-col-width) * 4);
+    margin: 0 calc(var(--grid_col_width) * 4);
   }
 }
 
 @media screen and (max-width: 749px) {
   .new-arrivals__books li {
-    margin: 0 calc(var(--grid-col-width) * 2);
+    margin: 0 calc(var(--grid_col_width) * 2);
   }
 }
 
