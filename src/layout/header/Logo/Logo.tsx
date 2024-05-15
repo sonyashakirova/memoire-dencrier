@@ -38,7 +38,7 @@ export const Logo = () => {
         animate={controls}
         variants={{
           initial: { scale: 1, x: 0, y: 0 },
-          shrink: { scale: 0.66, x: '16%', y: '15%' },
+          shrink: { scale: 0.7, x: '16%', y: '15%' },
         }}
         transition={{ duration: 0.8 }}
       >

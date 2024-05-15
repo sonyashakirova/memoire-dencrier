@@ -6,10 +6,9 @@ interface Props {
   size: 'sm' | 'lg';
   label: string;
   onSubmit: (email: string) => void;
-  color?: string;
 }
 
-export const EmailForm = ({ size, label, onSubmit, color }: Props) => {
+export const EmailForm = ({ size, label, onSubmit }: Props) => {
   const email = useRef('');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -18,11 +17,7 @@ export const EmailForm = ({ size, label, onSubmit, color }: Props) => {
   };
 
   return (
-    <form
-      className={`email-form ${size}`}
-      onSubmit={handleSubmit}
-      style={{ color }}
-    >
+    <form className={`email-form ${size}`} onSubmit={handleSubmit}>
       <label className='email-form__label' htmlFor='email-input'>
         {label}
       </label>
@@ -34,9 +29,7 @@ export const EmailForm = ({ size, label, onSubmit, color }: Props) => {
             type='email'
             name='email'
             placeholder='Courriel*'
-            onChange={(e) => {
-              email.current = e.target.value;
-            }}
+            onChange={(e) => (email.current = e.target.value)}
           />
         </div>
         <ArrowLink as='button' type='submit'>

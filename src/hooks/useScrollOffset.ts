@@ -19,5 +19,5 @@ export const useScrollOffset = (
     window.addEventListener('scroll', handleScrollOffset);
 
     return () => window.removeEventListener('scroll', handleScrollOffset);
-  }, []);
+  }, [offset]);
 };

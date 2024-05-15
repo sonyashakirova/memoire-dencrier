@@ -1,6 +1,7 @@
 .email-form.lg {
+  color: var(--font_color_secondary);
   border-top: 1px solid currentColor;
-  padding-top: var(--spacing-4);
+  padding-top: var(--spacing_4);
 }
 
 .email-form.sm .email-form__label {
@@ -24,7 +25,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-top: var(--spacing-6);
+  margin-top: var(--spacing_6);
   border-bottom: 1px solid currentColor;
 }
 
@@ -47,7 +48,7 @@
 @media screen and (max-width: 749px) {
   .email-form.lg .email-form__input-container {
     border-bottom: 1px solid currentColor;
-    margin-bottom: var(--spacing-2);
+    margin-bottom: var(--spacing_2);
     width: 100%;
   }
 }

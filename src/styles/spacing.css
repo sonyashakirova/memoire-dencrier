@@ -1,32 +1,39 @@
 :root {
-  --base-px: 13.5;
-  --spacing-1: 0.8rem;
-  --spacing-2: 2rem;
-  --spacing-3: 3rem;
-  --spacing-4: 3.2rem;
-  --spacing-5: calc(40 / var(--base-px) * 1rem);
-  --spacing-6: calc(64 / var(--base-px) * 1rem);
-  --spacing-7: 7rem;
-  --spacing-8: calc(152 / var(--base-px) * 1rem);
-  --spacing-9: calc(256 / var(--base-px) * 1rem);
+  --spacing_1: 0.6rem;
+  --spacing_2: 1.2rem;
+  --spacing_3: 1.75rem;
+  --spacing_4: 2.4rem;
+  --spacing_5: 3rem;
+  --spacing_6: 4.7rem;
+  --spacing_7: 9.5rem;
+  --spacing_8: 11.25rem;
+  --spacing_9: 19rem;
 }
 
 @media screen and (max-width: 1199px) {
   :root {
-    --base-px: 16;
-    --spacing-1: 1.1rem;
-    --spacing-7: 7rem;
+    --spacing_1: 0.5rem;
+    --spacing_2: 1rem;
+    --spacing_3: 1.5rem;
+    --spacing_4: 2rem;
+    --spacing_5: 2.5rem;
+    --spacing_6: 4rem;
+    --spacing_7: 8rem;
+    --spacing_8: 9.5rem;
+    --spacing_9: 16rem;
   }
 }
 
 @media screen and (max-width: 749px) {
   :root {
-    --base-px: 14.5;
-    --spacing-4: 5rem;
-    --spacing-5: 2rem;
-    --spacing-6: 3.4rem;
-    --spacing-7: 3.6rem;
-    --spacing-8: 4rem;
-    --spacing-9: calc(128 / var(--base-px) * 1rem);
+    --spacing_1: 0.7rem;
+    --spacing_2: 1.1rem;
+    --spacing_3: 1.65rem;
+    --spacing_4: 2.2rem;
+    --spacing_5: 2.2rem;
+    --spacing_6: 2.75rem;
+    --spacing_7: 4.4rem;
+    --spacing_8: 5rem;
+    --spacing_9: 8.8rem;
   }
 }

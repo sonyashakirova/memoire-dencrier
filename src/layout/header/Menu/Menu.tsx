@@ -5,6 +5,7 @@ import { useWindowSize } from '../../../hooks';
 import { lenis } from '../../../lenis';
 import './Menu.style.css';
 import { NavItem } from './NavItem';
+import { Link } from 'react-router-dom';
 
 const navItems = [
   {
@@ -116,7 +117,7 @@ export const Menu = ({ open }: Props) => {
                         delay: (socials.length + index) * 0.05,
                       }}
                     >
-                      <a href={c.link}>{c.name}</a>
+                      <Link to={c.link}>{c.name}</Link>
                     </motion.li>
                   )}
                 </AnimatePresence>

@@ -1,38 +1,41 @@
 :root {
   --header_top_height: 10rem;
-  --page_margin: 2rem;
-  --grid-cols: 20;
-  --grid-gap: 1.2rem;
-  --wrapper-col-span-xs: 14;
-  --wrapper-col-span-sm: 16;
-  --wrapper-col-span: 18;
-  --grid-col-width: calc(
-    (100vw - var(--page_margin) * 2 - var(--grid-gap) * (var(--grid-cols) - 1)) /
-      var(--grid-cols)
+  --copyrights_height: 6rem;
+  --page_margin: 3rem;
+  --grid_cols: 20;
+  --grid_gap: 1.2rem;
+  --wrapper_col_span_xs: 14;
+  --wrapper_col_span_sm: 16;
+  --wrapper_col_span: 18;
+  --grid_col_width: calc(
+    (100vw - var(--page_margin) * 2 - var(--grid_gap) * (var(--grid_cols) - 1)) /
+      var(--grid_cols)
   );
 }
 
 @media screen and (max-width: 1199px) {
   :root {
     --header_top_height: 8rem;
-    --page_margin: 3rem;
-    --grid-cols: 12;
-    --grid-gap: 1rem;
-    --wrapper-col-span-xs: 10;
-    --wrapper-col-span-sm: 12;
-    --wrapper-col-span: 12;
+    --copyrights_height: 6rem;
+    --page_margin: 2rem;
+    --grid_cols: 12;
+    --grid_gap: 1rem;
+    --wrapper_col_span_xs: 10;
+    --wrapper_col_span_sm: 12;
+    --wrapper_col_span: 12;
   }
 }
 
 @media screen and (max-width: 749px) {
   :root {
     --header_top_height: 6rem;
-    --page_margin: 2rem;
-    --grid-cols: 8;
-    --grid-gap: 0.55rem;
-    --wrapper-col-span-xs: 8;
-    --wrapper-col-span-sm: 8;
-    --wrapper-col-span: 8;
+    --copyrights_height: 10rem;
+    --page_margin: 1.65rem;
+    --grid_cols: 8;
+    --grid_gap: 0.55rem;
+    --wrapper_col_span_xs: 8;
+    --wrapper_col_span_sm: 8;
+    --wrapper_col_span: 8;
   }
 }
 
@@ -40,19 +43,19 @@
 .page-grid-sm,
 .page-grid {
   display: grid;
-  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
-  gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--grid_cols), minmax(0, 1fr));
+  gap: var(--grid_gap);
   margin: 0 var(--page_margin);
 }
 
 .page-grid-xs {
-  --span: var(--wrapper-col-span-xs);
+  --span: var(--wrapper_col_span_xs);
 }
 .page-grid-sm {
-  --span: var(--wrapper-col-span-sm);
+  --span: var(--wrapper_col_span_sm);
 }
 .page-grid {
-  --span: var(--wrapper-col-span);
+  --span: var(--wrapper_col_span);
 }
 
 .page-grid-xs > *:first-child,
@@ -64,5 +67,5 @@
 .page-grid-xs > *:last-child,
 .page-grid-sm > *:last-child,
 .page-grid > *:last-child {
-  grid-column-end: calc((var(--grid-cols) - var(--span)) / -2 - 1);
+  grid-column-end: calc((var(--grid_cols) - var(--span)) / -2 - 1);
 }
