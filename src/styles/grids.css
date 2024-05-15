@@ -61,7 +61,7 @@
 .page-grid-xs > *:first-child,
 .page-grid-sm > *:first-child,
 .page-grid > *:first-child {
-  grid-column-start: calc((var(--grid-cols) - var(--span)) / 2 + 1);
+  grid-column-start: calc((var(--grid_cols) - var(--span)) / 2 + 1);
 }
 
 .page-grid-xs > *:last-child,

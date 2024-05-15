@@ -1,8 +1,12 @@
 import { useContext, useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import imgUrl from '../../../assets/images/about-image.jpg';
 import { ColorContext } from '../../../providers';
 import { ArrowLink } from '../../atoms';
 import './AboutSection.style.css';
+
+const TEXT =
+  "Mémoire d’encrier est une maison d'édition indépendante fondée en 2003 par l'écrivain Rodney Saint-Éloi. Le catalogue rassemble, dans un souci de cohérence éditoriale, des oeuvres d'auteur·trice·s issu·e·s de tous les continents dans une perspective décoloniale. Une place spéciale est accordée aux paroles singulières qui racontent des histoires que l'on ne raconte pas.";
 
 export const AboutSection = () => {
   const sectionRef = useRef(null);
@@ -15,7 +19,7 @@ export const AboutSection = () => {
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const blackoutOpacity = useTransform(scrollYProgress, [0, 1], [0.8, 0.4]);
   const textY = useTransform(scrollYProgress, [0, 1], ['9rem', '-9rem']);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   const { setHeaderColor } = useContext(ColorContext);
   const topInView = useInView(sectionRef, { margin: '-12% 0px -94% 0px' });
@@ -35,7 +39,7 @@ export const AboutSection = () => {
         className='about-section__image-container'
         style={{ y: imageY, scale: imageScale }}
       >
-        <img src='src/assets/images/ortense_f-hr-1-1000x711.jpg' alt='hehe' />
+        <img src={imgUrl} alt='About Image' />
         <motion.span
           className='about-section__blackout'
           style={{ opacity: blackoutOpacity }}
@@ -46,14 +50,7 @@ export const AboutSection = () => {
           className='about-section__text'
           style={{ y: textY, opacity: textOpacity }}
         >
-          <motion.p className='color-toner'>
-            Mémoire d’encrier est une maison d'édition indépendante fondée en
-            2003 par l'écrivain Rodney Saint-Éloi. Le catalogue rassemble, dans
-            un souci de cohérence éditoriale, des oeuvres d'auteur·trice·s
-            issu·e·s de tous les continents dans une perspective décoloniale.
-            Une place spéciale est accordée aux paroles singulières qui
-            racontent des histoires que l'on ne raconte pas.
-          </motion.p>
+          <p className='color-toner'>{TEXT}</p>
           <p className='about-section__link'>
             <ArrowLink>En savoir plus</ArrowLink>
           </p>

@@ -3,6 +3,7 @@
   --arrow_height: 8px;
   font-family: var(--heading_font_family);
   font-size: var(--sm_font_size);
+  letter-spacing: 0.04em;
   padding: 0.325em calc(0.75em + var(--arrow_width)) 0.25em 0;
   border: none;
   background-color: transparent;

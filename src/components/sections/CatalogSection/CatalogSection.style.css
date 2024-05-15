@@ -24,7 +24,7 @@
   }
 
   .catalog-section__book-container {
-    margin: var(--spacing-7) calc(var(--grid-col-width) * 2) 0;
+    margin: var(--spacing_7) calc(var(--grid-col-width) * 2) 0;
     height: max-content;
   }
 }
@@ -36,13 +36,13 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   display: grid;
-  gap: var(--spacing-1);
+  gap: var(--spacing_1);
 }
 
 .catalog-section__title {
   text-transform: uppercase;
   font-size: var(--sm_font_size);
-  margin-bottom: var(--spacing-5);
+  margin-bottom: var(--spacing_5);
 }
 
 .catalog-section__link {

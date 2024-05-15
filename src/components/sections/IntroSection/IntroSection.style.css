@@ -5,7 +5,7 @@
   min-height: 100vh;
   overflow-x: clip;
   pointer-events: none;
-  padding: var(--spacing-8) 0;
+  padding: var(--spacing_8) 0;
 }
 
 .intro-section__content {
@@ -39,6 +39,6 @@
 }
 
 .intro-section__description {
-  margin-top: var(--spacing-5);
+  margin-top: var(--spacing_5);
   transition: transform 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
