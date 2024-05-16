@@ -2,7 +2,7 @@
 
 Сайт книжного магазина
 
-- Демо:
+- Демо: https://66461f7dc60184d103068b0b--peppy-mousse-8103a5.netlify.app/
 - Оригинал: https://www.awwwards.com/sites/memoire-dencrier
 
 ## Технологии
