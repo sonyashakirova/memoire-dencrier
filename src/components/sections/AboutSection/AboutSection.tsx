@@ -10,9 +10,9 @@ const TEXT =
   "Mémoire d’encrier est une maison d'édition indépendante fondée en 2003 par l'écrivain Rodney Saint-Éloi. Le catalogue rassemble, dans un souci de cohérence éditoriale, des oeuvres d'auteur·trice·s issu·e·s de tous les continents dans une perspective décoloniale. Une place spéciale est accordée aux paroles singulières qui racontent des histoires que l'on ne raconte pas.";
 
 export const AboutSection = () => {
-  const sectionRef = useRef(null);
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: ref,
     offset: ['start end', 'end start'],
   });
 
@@ -23,18 +23,19 @@ export const AboutSection = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   const { setHeaderColor } = useContext(ColorContext);
-
-  const visible = useIntersectionObserver(sectionRef, '0px');
+  const isHeaderTopVisible = useIntersectionObserver(ref, '-8% 0% -92%');
+  const isHeaderBottomVisible = useIntersectionObserver(ref, '-94% 0% -6%');
 
   useEffect(() => {
-    setHeaderColor({
-      top: visible ? '#ea5a0b' : '#1d1d1b',
-      bottom: visible ? '#ea5a0b' : '#1d1d1b',
-    });
-  }, [visible]);
+    setHeaderColor({ top: isHeaderTopVisible ? '#ea5a0b' : '#1d1d1b' });
+  }, [isHeaderTopVisible]);
+
+  useEffect(() => {
+    setHeaderColor({ bottom: isHeaderBottomVisible ? '#ea5a0b' : '#1d1d1b' });
+  }, [isHeaderBottomVisible]);
 
   return (
-    <motion.section className='about-section' ref={sectionRef}>
+    <motion.section className='about-section' ref={ref}>
       <motion.div
         className='about-section__image-container'
         style={{ y: imageY, scale: imageScale }}

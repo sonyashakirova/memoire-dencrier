@@ -22,7 +22,7 @@ export const NewArrivalsSection = () => {
   const y = useTransform(scrollYProgress, [0.1, 0.2], [200, 0]);
   const opacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
   const booksY = useTransform(scrollYProgress, [0, 1], ['70%', '-70%']);
-  const linkY = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const linkY = useTransform(scrollYProgress, [0, 1], ['65%', '-65%']);
 
   return (
     <section className='new-arrivals' ref={ref}>
@@ -46,12 +46,12 @@ export const NewArrivalsSection = () => {
                 </li>
               ))}
             </ul>
-            <motion.div
-              className='new-arrivals__link-container'
-              style={{ y: width > 749 ? linkY : 0 }}
-            >
-              <ArrowLink>Découvrir tous nos livres</ArrowLink>
-            </motion.div>
+          </motion.div>
+          <motion.div
+            className='new-arrivals__link-container'
+            style={{ y: width > 749 ? linkY : 0 }}
+          >
+            <ArrowLink>Découvrir tous nos livres</ArrowLink>
           </motion.div>
         </div>
       </div>

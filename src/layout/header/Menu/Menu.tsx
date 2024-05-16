@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { EmailForm } from '../../../components/atoms';
 import { useWindowSize } from '../../../hooks';
 import { lenis } from '../../../lenis';
-import './Menu.style.css';
 import { NavItem } from './NavItem';
-import { Link } from 'react-router-dom';
+import './Menu.style.css';
 
 const navItems = [
   {
@@ -63,7 +63,7 @@ export const Menu = ({ open }: Props) => {
           />
         )}
       </AnimatePresence>
-      <div id='menu' className='menu__inner' data-lenis-prevent>
+      <div className='menu__inner' data-lenis-prevent>
         <nav className='menu__navigation' data-lenis-prevent-disabled>
           <ul>
             {navItems.map((item, index) => (
@@ -86,7 +86,7 @@ export const Menu = ({ open }: Props) => {
             )}
           </AnimatePresence>
         </div>
-        <div className='menu__side'>
+        <div className='menu__sidebar'>
           <div>
             <ul className='menu__socials'>
               {socials.map((s, index) => (

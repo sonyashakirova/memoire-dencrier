@@ -82,7 +82,7 @@ export const FeaturedContentSection = () => {
       <motion.div className='featured-content__bg' style={{ opacity }} />
       <div className='page-grid-sm'>
         <div className='featured-content__slider'>
-          <div className='featured-content__slides'>
+          <div>
             <AnimatePresence mode='popLayout'>
               <motion.div
                 className='featured-content__slide'
@@ -99,19 +99,21 @@ export const FeaturedContentSection = () => {
               </motion.div>
             </AnimatePresence>
             <button className='featured-content__nav prev' onClick={handlePrev}>
-              <span className='brrbrbrbrb prev'></span>
+              <span className='slide-arrow' />
             </button>
             <button className='featured-content__nav next' onClick={handleNext}>
-              <span className='brrbrbrbrb'></span>
+              <span className='slide-arrow' />
             </button>
           </div>
           <div className='featured-content__thumbnails'>
             {slides.map((_, index) => (
               <button
-                className={`featured-content__thumbnail ${next === index ? 'active' : ''}`}
+                className={`featured-content__thumbnail ${next === index && 'active'}`}
                 key={index}
                 onClick={() => setIndex(index)}
-              ></button>
+              >
+                <span className='circle' />
+              </button>
             ))}
           </div>
         </div>

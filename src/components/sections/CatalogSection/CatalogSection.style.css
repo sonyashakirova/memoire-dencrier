@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--spacing_6) 0;
   overflow: hidden;
   position: sticky;
   top: 0;
@@ -24,7 +25,7 @@
   }
 
   .catalog-section__book-container {
-    margin: var(--spacing_7) calc(var(--grid_col_width) * 2) 0;
+    margin: var(--spacing_5) calc(var(--grid_col_width) * 2) var(--spacing_2);
     height: max-content;
   }
 }
@@ -39,10 +40,23 @@
   gap: var(--spacing_1);
 }
 
+@media screen and (max-width: 749px) {
+  .catalog-section__categories {
+    font-size: var(--h3_font_size);
+  }
+}
+
 .catalog-section__title {
   text-transform: uppercase;
   font-size: var(--sm_font_size);
   margin-bottom: var(--spacing_5);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 749px) {
+  .catalog-section__title {
+    margin-bottom: var(--spacing_3);
+  }
 }
 
 .catalog-section__link {

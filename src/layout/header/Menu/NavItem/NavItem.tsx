@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDeviceType } from '../../../../hooks';
 import './NavItem.style.css';
 
@@ -19,6 +19,10 @@ interface Props {
 export const NavItem = ({ visible, item, index }: Props) => {
   const [sublistOpen, setSublistOpen] = useState(false);
   const { isTouchDevice } = useDeviceType();
+
+  useEffect(() => {
+    !visible && setSublistOpen(false);
+  }, [visible]);
 
   return (
     <div

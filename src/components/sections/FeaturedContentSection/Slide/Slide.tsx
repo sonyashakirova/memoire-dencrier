@@ -17,11 +17,15 @@ export const Slide = ({ text, img }: Props) => {
   });
   const imageY = useTransform(scrollYProgress, [0, 1], ['4rem', '-4rem']);
   const textY = useTransform(scrollYProgress, [0, 1], ['-4rem', '4rem']);
+  const imgUrl = new URL(
+    `../../../../assets/images/featured/${img}`,
+    import.meta.url,
+  );
 
   return (
     <div className='slide' ref={slideRef}>
       <motion.img
-        src={`src/assets/images/featured/${img}`}
+        src={imgUrl.href}
         alt={img}
         style={{ y: width > 749 ? imageY : 0 }}
       />

@@ -21,6 +21,10 @@
   }
 }
 
+.email-form.sm .email-form__input-line {
+  margin-top: var(--spacing_1);
+}
+
 .email-form.lg .email-form__input-line {
   width: 100%;
   display: flex;

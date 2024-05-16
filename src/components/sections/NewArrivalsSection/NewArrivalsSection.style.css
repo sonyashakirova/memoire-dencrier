@@ -1,5 +1,5 @@
 .new-arrivals {
-  padding: var(--spacing_8) 0;
+  padding: var(--spacing_8) 0 var(--spacing_7);
   padding-top: 70vh;
   text-align: center;
 }
@@ -11,14 +11,6 @@
   bottom: calc(50% - 0.6em);
   pointer-events: none;
   z-index: -1;
-}
-
-@media screen and (max-width: 1199px) and (orientation: portrait),
-  screen and (max-width: 749px) {
-  .new-arrivals__title-container {
-    height: calc(100% + 150vh);
-    bottom: calc(50% - 0.6em);
-  }
 }
 
 .new-arrivals__title {
@@ -69,12 +61,12 @@
 }
 
 .new-arrivals__link-container {
-  margin-top: var(--spacing_4);
+  margin-top: var(--spacing_5);
   text-align: center;
 }
 
 @media screen and (max-width: 749px) {
   .new-arrivals__link-container {
-    margin-top: var(--spacing_3);
+    margin-top: var(--spacing_8);
   }
 }
