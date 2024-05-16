@@ -1,13 +1,31 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollDirection, useWindowSize } from '../../../hooks';
-import { ArrowLink, BookLink } from '../../atoms';
+import { ArrowLink, Book } from '../../atoms';
 import './NewArrivalsSection.style.css';
 
 const books = [
-  { img: 'book-01.jpg' },
-  { img: 'book-01.jpg' },
-  { img: 'book-01.jpg' },
+  {
+    title: 'Les étoiles se sont rapprochées',
+    author: 'Mylène Bouchard',
+    category: 'Poésie',
+    link: '',
+    img: 'book-03.png',
+  },
+  {
+    title: 'Béatrice et Croc Harry',
+    author: 'Lawrence Hill',
+    category: 'Roman/Récit',
+    link: '',
+    img: 'book-06.jpg',
+  },
+  {
+    title: 'Jonny Appleseed (format poche)',
+    author: 'Joshua Whitehead',
+    category: 'Legba',
+    link: '',
+    img: 'book-07.jpg',
+  },
 ];
 
 export const NewArrivalsSection = () => {
@@ -42,7 +60,7 @@ export const NewArrivalsSection = () => {
             <ul className='new-arrivals__books'>
               {books.map((book, index) => (
                 <li key={index}>
-                  <BookLink img={book.img} />
+                  <Book {...book} />
                 </li>
               ))}
             </ul>

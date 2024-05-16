@@ -7,15 +7,60 @@ import {
 } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useDeviceType } from '../../../hooks';
-import { BookLink } from '../../atoms';
+import { Book } from '../../atoms';
 import './CatalogSection.style.css';
 
 const categories = [
-  { name: 'Roman/Récit', book: { img: 'book-01.jpg' } },
-  { name: 'Essai', book: { img: 'book-01.jpg' } },
-  { name: 'Poésie', book: { img: 'book-01.jpg' } },
-  { name: 'Cadastres', book: { img: 'book-01.jpg' } },
-  { name: 'Legba', book: { img: 'book-01.jpg' } },
+  {
+    name: 'Roman/Récit',
+    exampleBook: {
+      title: 'Je remercie la nuit',
+      author: 'Véronique Tadjo',
+      category: 'Roman/Récit',
+      link: '/je-remercie-la-nuit',
+      img: 'book-01.jpg',
+    },
+  },
+  {
+    name: 'Essai',
+    exampleBook: {
+      title: "Lettre d'amour au territoire",
+      author: 'Joshua Whitehead',
+      category: 'Essai',
+      link: '',
+      img: 'book-02.jpg',
+    },
+  },
+  {
+    name: 'Poésie',
+    exampleBook: {
+      title: 'Les étoiles se sont rapprochées',
+      author: 'Mylène Bouchard',
+      category: 'Poésie',
+      link: '',
+      img: 'book-03.png',
+    },
+  },
+  {
+    name: 'Cadastres',
+    exampleBook: {
+      title: 'Seize temps noirs pour apprendre à dire kuei',
+      author: 'Philippe Néméh-Nombré',
+      category: 'Cadastres',
+      link: '',
+      img: 'book-04.jpg',
+    },
+  },
+  {
+    name: 'Legba',
+    exampleBook: {
+      title: '105 rue Carnot',
+      author: 'Felwine Sarr',
+      category: 'Legba',
+      link: '',
+      img: 'book-05.jpg',
+    },
+  },
 ];
 
 export const CatalogSection = () => {
@@ -82,7 +127,7 @@ export const CatalogSection = () => {
                 exit={{ x: '150%' }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
               >
-                <BookLink img={categories[active].book.img} />
+                <Book {...categories[active].exampleBook} />
               </motion.div>
             </AnimatePresence>
           </motion.div>

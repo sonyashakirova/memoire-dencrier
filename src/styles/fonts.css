@@ -31,7 +31,7 @@
   --h3_font_size: 4rem;
   --h4_font_size: 2.4rem;
   --base_font_size: 2.4rem;
-  --sm_font_size: 1.8rem;
+  --sm_font_size: 1.5rem;
   --xs_font_size: 1.3rem;
 }
 
@@ -42,7 +42,7 @@
     --h3_font_size: 2.6rem;
     --h4_font_size: 1.5rem;
     --base_font_size: 1.5rem;
-    --sm_font_size: 1.5rem;
+    --sm_font_size: 1.2rem;
     --xs_font_size: 0.8rem;
   }
 }
@@ -54,7 +54,7 @@
     --h3_font_size: 2.25rem;
     --h4_font_size: 1.25rem;
     --base_font_size: 1.5rem;
-    --sm_font_size: 1.5rem;
+    --sm_font_size: 1.2rem;
     --xs_font_size: 1rem;
   }
 }

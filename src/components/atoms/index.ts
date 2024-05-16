@@ -1,6 +1,6 @@
 export { AnimatedText } from './AnimatedText';
 export { ArrowLink } from './ArrowLink';
-export { BookLink } from './BookLink';
+export { Book } from './Book';
 export { BurgerButton } from './BurgerButton';
 export { CartLink } from './CartLink';
 export { EmailForm } from './EmailForm';
